@@ -258,7 +258,6 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
           <h2>Latitud</h2>
           <div className="property-location"><MapPin size={15} /> Avenida Rosauro Estelita, 155 · Rio de Janeiro/RJ</div>
         </div>
-        <div className="source-note"><ShieldCheck size={15} /> Dados organizados a partir dos prints enviados</div>
       </section>
       <section className="metrics-grid">
         <Metric icon={Building2} label="Unidades exibidas" value="72" helper="total indicado na plataforma de referência" />
