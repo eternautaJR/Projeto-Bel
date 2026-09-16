@@ -8,3 +8,4 @@ Validação móvel em 16/09/2026: em 390px de largura, a página Informações p
 Validação visual em 16/09/2026: o botão Fale conosco foi removido do topo e substituído pelo indicador estático “Fonte: Bel Radar”, com ícone de verificação e destaque discreto. O indicador aparece alinhado ao selo Ambiente de consulta.
 Validação visual em 16/09/2026: o selo “Ambiente de consulta” foi removido do cabeçalho. O topo agora mostra exclusivamente o indicador “Fonte: Bel Radar”.
 Validação visual em 16/09/2026: a frase “Dados organizados a partir dos prints enviados” não aparece mais no cabeçalho da subaba Latitud. O cabeçalho agora apresenta somente a identificação do empreendimento e seu endereço.
+Validação visual em 16/09/2026: as setas foram removidas de Informações, Anúncios ativos e Avalie com a gente. O menu lateral mantém apenas ícones e rótulos, preservando a hierarquia visual das subabas.

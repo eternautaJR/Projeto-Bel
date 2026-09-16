@@ -7,8 +7,6 @@ import {
   CalendarDays,
   CarFront,
   CheckCircle2,
-  ChevronDown,
-  ChevronRight,
   ExternalLink,
   FileText,
   Handshake,
@@ -130,7 +128,6 @@ function App() {
           <button className={`nav-item ${activePage === "Informações" ? "active" : ""}`} onClick={() => navigate("Informações")}>
             <BarChart3 size={18} />
             <span>Informações</span>
-            <ChevronDown className="nav-chevron" size={16} />
           </button>
           <div className="subnav" aria-label="Empreendimentos">
             {condominiumTabs.map((condo) => (
@@ -149,12 +146,10 @@ function App() {
           <button className={`nav-item ${activePage === "Anúncios ativos" ? "active" : ""}`} onClick={() => navigate("Anúncios ativos")}>
             <Home size={18} />
             <span>Anúncios ativos</span>
-            <ChevronRight className="nav-chevron" size={16} />
           </button>
           <button className={`nav-item ${activePage === "Avalie com a gente" ? "active" : ""}`} onClick={() => navigate("Avalie com a gente")}>
             <MessageCircle size={18} />
             <span>Avalie com a gente</span>
-            <ChevronRight className="nav-chevron" size={16} />
           </button>
         </nav>
         <div className="sidebar-footer">
