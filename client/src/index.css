@@ -113,6 +113,12 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .metric-card p { margin: 1px 0 6px; color: var(--ink-soft); font-size: 12px; }
 .metric-card strong { display: block; font-family: 'Libre Baskerville', Georgia, serif; font-size: 22px; color: var(--ink); }
 .metric-card span { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+.average-area-card { padding: 22px; }
+.area-values-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.area-value-item { border: 1px solid #e8eeea; border-radius: 11px; padding: 14px; background: #fbfdfb; }
+.area-value-item span { display: block; color: var(--blue-dark); font-size: 11px; font-weight: 700; }
+.area-value-item strong { display: block; color: var(--ink); font-family: 'Libre Baskerville', Georgia, serif; font-size: 16px; margin-top: 10px; }
+.area-value-item small { display: block; color: var(--muted); font-size: 10px; margin-top: 5px; }
 .latitud-info-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 18px; }
 .detail-card, .transparent-card { padding: 23px; }
 .detail-list { display: grid; gap: 0; }
@@ -172,6 +178,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
   .latitud-info-grid { grid-template-columns: 1fr; }
   .transparent-card { min-height: auto; }
   .metrics-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .area-values-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 800px) {
   .sidebar { position: fixed; left: -270px; transition: left .22s ease; box-shadow: 12px 0 30px rgba(0,0,0,.18); }
@@ -199,6 +206,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
   .intro-banner { display: block; padding: 22px; }
   .intro-icon { margin-bottom: 14px; }
   .metrics-grid { grid-template-columns: 1fr; }
+  .area-values-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
   .page-tabs { overflow-x: auto; padding-bottom: 8px; }
   .page-tabs button { flex: 0 0 auto; }

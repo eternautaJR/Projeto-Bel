@@ -234,6 +234,7 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
         <div className="intro-icon"><Building2 size={25} /></div>
         <div><p className="section-kicker">Empreendimento selecionado</p><h2>{activeCondo}</h2><p>Esta subaba está estruturada e pronta para receber os dados oficiais do empreendimento. Assim que as informações forem disponibilizadas, elas aparecerão aqui de forma organizada, sem mistura com os demais condomínios.</p></div>
       </section>
+      {activeCondo === "Orygem" && <AverageAreaValues />}
       <section className="surface-card empty-listings"><div className="empty-icon"><FileText size={25} /></div><p className="section-kicker">Dados em preparação</p><h2>Informações do {activeCondo} serão inseridas aqui</h2><p>Áreas por bloco, entrega e idade, unidades e vendas desde janeiro de 2025 serão cadastradas nesta subaba exclusivamente para este empreendimento.</p></section>
     </div>
   );
@@ -260,6 +261,7 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
+      <AverageAreaValues />
       <section className="surface-card sales-card">
         <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Transações identificadas nos prints de referência do Latitud. A lista será ampliada conforme novos dados forem cadastrados.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
         <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th>Data da venda</th><th>Valor</th><th>Área</th><th>Preço/m²</th><th>Posição</th></tr></thead><tbody>{filteredSales.map((sale) => <tr key={`${sale.unit}-${sale.date}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
@@ -303,6 +305,18 @@ function FeatureItem({ icon: Icon, title, text }: { icon: LucideIcon; title: str
 
 function Metric({ icon: Icon, label, value, helper }: { icon: LucideIcon; label: string; value: string; helper: string }) {
   return <article className="surface-card metric-card"><div className="metric-icon"><Icon size={19} /></div><div><p>{label}</p><strong>{value}</strong><span>{helper}</span></div></article>;
+}
+
+function AverageAreaValues() {
+  const ranges = ["119–126 m²", "150 m²", "184–188 m²", "+200 m²"];
+  return (
+    <section className="surface-card average-area-card">
+      <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
+      <div className="area-values-grid">
+        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>A informar</strong><small>valor médio da faixa</small></div>)}
+      </div>
+    </section>
+  );
 }
 
 function DetailRow({ icon: Icon, label, value, note }: { icon: LucideIcon; label: string; value: string; note?: string }) {
