@@ -28,9 +28,10 @@ import {
   Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useLocation } from "wouter";
+import { Router, useLocation } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 
-const LOGO_URL = "/manus-storage/logobdnovo_ab008b49.png";
+const LOGO_URL = `${import.meta.env.BASE_URL}logobdnovo.png`;
 
 const condominiumTabs = ["Concept", "Latitud", "Mudrá", "Orygem"] as const;
 type Condominium = (typeof condominiumTabs)[number];
@@ -132,7 +133,7 @@ function getRouteState(path: string): { page: MainPage; condo: Condominium } {
   return { page: "Informações", condo: "Latitud" };
 }
 
-function App() {
+function DashboardApp() {
   const [location, setLocation] = useLocation();
   const routeState = getRouteState(location);
   const activePage = routeState.page;
@@ -395,6 +396,14 @@ function AverageAreaValues({ values }: { values?: Record<string, string> }) {
 
 function DetailRow({ icon: Icon, label, value, note }: { icon: LucideIcon; label: string; value: string; note?: string }) {
   return <div className="detail-row"><Icon size={17} /><div><span>{label}</span><strong>{value}</strong>{note && <small>{note}</small>}</div></div>;
+}
+
+function App() {
+  return (
+    <Router hook={useHashLocation}>
+      <DashboardApp />
+    </Router>
+  );
 }
 
 export default App;
