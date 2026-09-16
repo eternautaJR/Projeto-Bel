@@ -300,9 +300,9 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         </div>
       </section>
       <section className="metrics-grid">
-        <Metric icon={Building2} label="Total de unidades" value="204" helper="total do empreendimento Latitud" />
-        <Metric icon={Ruler} label="Menor área observada" value="120 m²" helper="nas transações capturadas" />
-        <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
+        <Metric icon={Building2} label="Total de unidades" value="204" helper="B1 – 60 · B2 – 36 · B3 – 60 · B4 – 36" />
+        <Metric icon={Ruler} label="Menor área observada" value="120 m²" helper="" />
+        <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
       <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "A informar", "179–187 m²": "A informar", "372 m²": "A informar" }} />
@@ -348,7 +348,7 @@ function FeatureItem({ icon: Icon, title, text }: { icon: LucideIcon; title: str
 }
 
 function Metric({ icon: Icon, label, value, helper }: { icon: LucideIcon; label: string; value: string; helper: string }) {
-  return <article className="surface-card metric-card"><div className="metric-icon"><Icon size={19} /></div><div><p>{label}</p><strong>{value}</strong><span>{helper}</span></div></article>;
+  return <article className="surface-card metric-card"><div className="metric-icon"><Icon size={19} /></div><div><p>{label}</p><strong>{value}</strong>{helper && <span>{helper}</span>}</div></article>;
 }
 
 function saleSortValue(sale: SaleRow, key: SaleSortKey) {
