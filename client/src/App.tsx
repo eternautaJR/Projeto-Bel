@@ -300,7 +300,7 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         </div>
       </section>
       <section className="metrics-grid">
-        <Metric icon={Building2} label="Unidades exibidas" value="72" helper="total indicado na plataforma de referência" />
+        <Metric icon={Building2} label="Total de unidades" value="204" helper="total do empreendimento Latitud" />
         <Metric icon={Ruler} label="Menor área observada" value="120 m²" helper="nas transações capturadas" />
         <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
