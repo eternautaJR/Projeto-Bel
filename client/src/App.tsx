@@ -53,7 +53,30 @@ const latitudSales: SaleRow[] = [
   { unit: "Blc 3 Apt 401", date: "11/05/2026", value: "R$ 1.487.357,60", pricePerM2: "R$ 12.394,65", area: "120 m²", complement: "Bloco 3 • Apt 401", position: "Fundos" },
   { unit: "Blc 1 Apt 105", date: "05/04/2026", value: "R$ 1.750.000,00", pricePerM2: "R$ 14.583,33", area: "120 m²", complement: "Bloco 1 • Apt 105", position: "Fundos" },
   { unit: "Blc 3 Apt 906", date: "11/03/2026", value: "R$ 1.609.204,06", pricePerM2: "R$ 13.082,96", area: "123 m²", complement: "Bloco 3 • Apt 906", position: "Fundos" },
-  { unit: "Blc 1 Apt 101", date: "21/01/2025", value: "R$ 1.734.206,61", pricePerM2: "R$ 14.332,29", area: "121 m²", complement: "Bloco 1 • Apt 101", position: "Frente" },
+  { unit: "Blc 3 Apt 906", date: "11/03/2026", value: "R$ 1.601.147,74", pricePerM2: "R$ 13.342,90", area: "120 m²", complement: "Bloco 3 • Apt 906", position: "Fundos" },
+  { unit: "Blc 3 Apt 401", date: "22/02/2026", value: "R$ 1.686.600,60", pricePerM2: "R$ 14.055,01", area: "120 m²", complement: "Bloco 3 • Apt 401", position: "Fundos" },
+  { unit: "Blc 3 Apt 204", date: "03/02/2026", value: "R$ 1.600.000,00", pricePerM2: "R$ 13.008,13", area: "123 m²", complement: "Bloco 3 • Apt 204", position: "Fundos" },
+  { unit: "Blc 1 Apt 105", date: "29/12/2025", value: "R$ 1.574.678,27", pricePerM2: "R$ 13.013,87", area: "121 m²", complement: "Bloco 1 • Apt 105", position: "Fundos" },
+  { unit: "Blc 3 Apt 203", date: "10/12/2025", value: "R$ 2.228.070,00", pricePerM2: "R$ 17.824,56", area: "125 m²", complement: "Bloco 3 • Apt 203", position: "Fundos" },
+  { unit: "Blc 3 Apt 402", date: "12/11/2025", value: "R$ 1.671.995,00", pricePerM2: "R$ 13.933,29", area: "120 m²", complement: "Bloco 3 • Apt 402", position: "Fundos" },
+  { unit: "Blc 3 Apt 906", date: "03/11/2025", value: "R$ 1.586.169,30", pricePerM2: "R$ 12.895,69", area: "123 m²", complement: "Bloco 3 • Apt 906", position: "Fundos" },
+  { unit: "Blc 1 Apt 203", date: "23/10/2025", value: "R$ 1.696.500,00", pricePerM2: "R$ 13.572,00", area: "125 m²", complement: "Bloco 1 • Apt 203", position: "Fundos" },
+  { unit: "Blc 3 Apt 305", date: "23/10/2025", value: "R$ 1.696.500,00", pricePerM2: "R$ 14.020,66", area: "121 m²", complement: "Bloco 3 • Apt 305", position: "Fundos" },
+  { unit: "Blc 1 Apt 603", date: "16/10/2025", value: "R$ 1.502.776,55", pricePerM2: "R$ 12.022,21", area: "125 m²", complement: "Bloco 1 • Apt 603", position: "Fundos" },
+  { unit: "Blc 3 Apt 1003", date: "08/09/2025", value: "R$ 1.650.000,00", pricePerM2: "R$ 13.200,00", area: "125 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
+  { unit: "Blc 3 Apt 806", date: "13/07/2025", value: "R$ 1.843.395,61", pricePerM2: "R$ 14.986,96", area: "123 m²", complement: "Bloco 3 • Apt 806", position: "Fundos" },
+  { unit: "Blc 1 Apt 101", date: "01/07/2025", value: "R$ 1.569.917,86", pricePerM2: "R$ 13.082,65", area: "120 m²", complement: "Bloco 1 • Apt 101", position: "Frente" },
+  { unit: "Blc 1 Apt 502", date: "07/05/2025", value: "R$ 1.833.717,67", pricePerM2: "R$ 15.280,98", area: "120 m²", complement: "Bloco 1 • Apt 502", position: "Fundos" },
+  { unit: "Blc 1 Apt 402", date: "07/05/2025", value: "R$ 1.816.555,50", pricePerM2: "R$ 15.137,96", area: "120 m²", complement: "Bloco 1 • Apt 402", position: "Fundos" },
+  { unit: "Blc 3 Apt 606", date: "07/05/2025", value: "R$ 1.637.014,95", pricePerM2: "R$ 13.309,06", area: "123 m²", complement: "Bloco 3 • Apt 606", position: "Fundos" },
+  { unit: "Blc 3 Apt 301", date: "07/05/2025", value: "R$ 1.872.601,99", pricePerM2: "R$ 15.605,02", area: "120 m²", complement: "Bloco 3 • Apt 301", position: "Fundos" },
+  { unit: "Blc 1 Apt 502", date: "27/04/2025", value: "R$ 1.810.674,12", pricePerM2: "R$ 15.088,95", area: "120 m²", complement: "Bloco 1 • Apt 502", position: "Fundos" },
+  { unit: "Blc 1 Apt 402", date: "24/04/2025", value: "R$ 1.793.514,48", pricePerM2: "R$ 14.945,95", area: "120 m²", complement: "Bloco 1 • Apt 402", position: "Fundos" },
+  { unit: "Blc 3 Apt 204", date: "16/04/2025", value: "R$ 1.602.250,00", pricePerM2: "R$ 13.241,74", area: "121 m²", complement: "Bloco 3 • Apt 204", position: "Fundos" },
+  { unit: "Blc 1 Apt 801", date: "02/04/2025", value: "R$ 1.843.644,50", pricePerM2: "R$ 15.363,70", area: "120 m²", complement: "Bloco 1 • Apt 801", position: "Frente" },
+  { unit: "Blc 3 Apt 102", date: "20/02/2025", value: "R$ 1.570.000,00", pricePerM2: "R$ 13.083,33", area: "120 m²", complement: "Bloco 3 • Apt 102", position: "Fundos" },
+  { unit: "Blc 1 Apt 1004", date: "21/01/2025", value: "R$ 1.734.206,61", pricePerM2: "R$ 14.332,29", area: "121 m²", complement: "Bloco 1 • Apt 1004", position: "Fundos" },
+  { unit: "Blc 3 Apt 1003", date: "12/01/2025", value: "R$ 1.728.048,73", pricePerM2: "R$ 13.824,39", area: "125 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
 ];
 
 function elapsedAgeFrom(month: number, year: number) {
@@ -261,9 +284,9 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
-      <AverageAreaValues />
+      <AverageAreaValues values={{ "119–126 m²": "R$ 1.700.977,70", "150 m²": "A informar", "184–188 m²": "A informar", "+200 m²": "A informar" }} />
       <section className="surface-card sales-card">
-        <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Transações identificadas nos prints de referência do Latitud. A lista será ampliada conforme novos dados forem cadastrados.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
+        <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Latitud com unidade, bloco, data, valor, área e posição. A partir de janeiro de 2025, cada transação aparece individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
         <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th>Data da venda</th><th>Valor</th><th>Área</th><th>Preço/m²</th><th>Posição</th></tr></thead><tbody>{filteredSales.map((sale) => <tr key={`${sale.unit}-${sale.date}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
         {filteredSales.length === 0 && <div className="empty-filter"><Search size={17} /> Nenhuma unidade encontrada para essa busca.</div>}
         <div className="table-footer"><span>Mostrando {filteredSales.length} registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
@@ -307,13 +330,13 @@ function Metric({ icon: Icon, label, value, helper }: { icon: LucideIcon; label:
   return <article className="surface-card metric-card"><div className="metric-icon"><Icon size={19} /></div><div><p>{label}</p><strong>{value}</strong><span>{helper}</span></div></article>;
 }
 
-function AverageAreaValues() {
+function AverageAreaValues({ values }: { values?: Record<string, string> }) {
   const ranges = ["119–126 m²", "150 m²", "184–188 m²", "+200 m²"];
   return (
     <section className="surface-card average-area-card">
       <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
       <div className="area-values-grid">
-        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>A informar</strong><small>valor médio da faixa</small></div>)}
+        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>{values?.[range] ?? "A informar"}</strong><small>{values?.[range] && values[range] !== "A informar" ? "média de 32 transações" : "valor médio da faixa"}</small></div>)}
       </div>
     </section>
   );
