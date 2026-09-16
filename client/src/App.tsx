@@ -50,6 +50,7 @@ type SaleSortKey = "date" | "value" | "area" | "pricePerM2";
 type SortDirection = "asc" | "desc";
 
 const latitudSales: SaleRow[] = [
+  { unit: "Blc 4 Apt 1001", date: "27/07/2026", value: "R$ 4.115.100,00", pricePerM2: "R$ 11.062,10", area: "372 m²", complement: "Bloco 4 • Apt 1001", position: "Fundos" },
   { unit: "Blc 1 Apt 903", date: "26/07/2026", value: "R$ 2.122.302,77", pricePerM2: "R$ 16.978,42", area: "125 m²", complement: "Bloco 1 • Apt 903", position: "Fundos" },
   { unit: "Blc 3 Apt 204", date: "10/06/2026", value: "R$ 1.500.000,00", pricePerM2: "R$ 12.396,69", area: "121 m²", complement: "Bloco 3 • Apt 204", position: "Fundos" },
   { unit: "Blc 3 Apt 202", date: "31/05/2026", value: "R$ 1.531.200,00", pricePerM2: "R$ 12.760,00", area: "120 m²", complement: "Bloco 3 • Apt 202", position: "Fundos" },
@@ -69,6 +70,7 @@ const latitudSales: SaleRow[] = [
   { unit: "Blc 3 Apt 305", date: "23/10/2025", value: "R$ 1.696.500,00", pricePerM2: "R$ 14.020,66", area: "121 m²", complement: "Bloco 3 • Apt 305", position: "Fundos" },
   { unit: "Blc 1 Apt 603", date: "16/10/2025", value: "R$ 1.502.776,55", pricePerM2: "R$ 12.022,21", area: "125 m²", complement: "Bloco 1 • Apt 603", position: "Fundos" },
   { unit: "Blc 3 Apt 1003", date: "08/09/2025", value: "R$ 1.650.000,00", pricePerM2: "R$ 13.200,00", area: "125 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
+  { unit: "Blc 4 Apt 1002", date: "13/07/2025", value: "R$ 4.905.537,66", pricePerM2: "R$ 13.186,93", area: "372 m²", complement: "Bloco 4 • Apt 1002", position: "Fundos" },
   { unit: "Blc 3 Apt 806", date: "13/07/2025", value: "R$ 1.843.395,61", pricePerM2: "R$ 14.986,96", area: "123 m²", complement: "Bloco 3 • Apt 806", position: "Fundos" },
   { unit: "Blc 1 Apt 101", date: "01/07/2025", value: "R$ 1.569.917,86", pricePerM2: "R$ 13.082,65", area: "120 m²", complement: "Bloco 1 • Apt 101", position: "Frente" },
   { unit: "Blc 1 Apt 502", date: "07/05/2025", value: "R$ 1.833.717,67", pricePerM2: "R$ 15.280,98", area: "120 m²", complement: "Bloco 1 • Apt 502", position: "Fundos" },
@@ -305,7 +307,7 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
-      <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "A informar", "179–187 m²": "A informar", "372 m²": "A informar" }} />
+      <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "A informar", "179–187 m²": "A informar", "372 m²": "R$ 4.510.318,83" }} />
       <section className="surface-card sales-card">
         <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Latitud com unidade, bloco, data, valor, área e posição. A partir de janeiro de 2025, cada transação aparece individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
         <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th><SortButton label="Data da venda" sortKey="date" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Valor" sortKey="value" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Área" sortKey="area" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Preço/m²" sortKey="pricePerM2" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th>Posição</th></tr></thead><tbody>{sortedSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
@@ -372,7 +374,7 @@ function AverageAreaValues({ values }: { values?: Record<string, string> }) {
     <section className="surface-card average-area-card">
       <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
       <div className="area-values-grid">
-        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>{values?.[range] ?? "A informar"}</strong><small>{values?.[range] && values[range] !== "A informar" ? "média de 32 transações" : "valor médio da faixa"}</small></div>)}
+        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>{values?.[range] ?? "A informar"}</strong><small>{values?.[range] && values[range] !== "A informar" ? range === "372 m²" ? "média de 2 transações" : "média de 32 transações" : "valor médio da faixa"}</small></div>)}
       </div>
     </section>
   );
