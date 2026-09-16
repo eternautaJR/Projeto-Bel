@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronRight,
-  CircleDot,
   ExternalLink,
   FileText,
   Handshake,
@@ -171,7 +170,6 @@ function App() {
             <h1>{pageTitle}</h1>
           </div>
           <div className="topbar-meta">
-            <span className="status-pill"><CircleDot size={12} /> Ambiente de consulta</span>
             <div className="source-badge"><ShieldCheck size={16} /> Fonte: Bel Radar</div>
           </div>
         </header>
