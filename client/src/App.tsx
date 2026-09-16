@@ -59,6 +59,16 @@ const latitudSales: SaleRow[] = [
   { unit: "Blc 1 Apt 101", date: "21/01/2025", value: "R$ 1.734.206,61", pricePerM2: "R$ 14.332,29", area: "121 m²", complement: "Bloco 1 • Apt 101", position: "Frente" },
 ];
 
+function elapsedAgeFrom(month: number, year: number) {
+  const today = new Date();
+  let months = (today.getFullYear() - year) * 12 + today.getMonth() - month;
+  if (today.getDate() < 1) months -= 1;
+  months = Math.max(0, months);
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+  return `${years} ${years === 1 ? "ano" : "anos"} e ${remainingMonths} ${remainingMonths === 1 ? "mês" : "meses"}`;
+}
+
 const navIcons: Record<MainPage, LucideIcon> = {
   Informações: BarChart3,
   "Anúncios ativos": Home,
@@ -255,28 +265,8 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
       <section className="metrics-grid">
         <Metric icon={Building2} label="Unidades exibidas" value="72" helper="total indicado na plataforma de referência" />
         <Metric icon={Ruler} label="Menor área observada" value="120 m²" helper="nas transações capturadas" />
-        <Metric icon={Ruler} label="Maior área observada" value="125 m²" helper="nas transações capturadas" />
-        <Metric icon={CalendarDays} label="Ano de construção" value="2024" helper="informado nos registros exibidos" />
-      </section>
-      <section className="latitud-info-grid">
-        <div className="surface-card detail-card">
-          <div className="section-heading"><div><p className="section-kicker">Resumo do empreendimento</p><h2>O que já está identificado</h2></div><Building2 size={21} /></div>
-          <div className="detail-list">
-            <DetailRow icon={MapPin} label="Endereço" value="Avenida Rosauro Estelita, 155" />
-            <DetailRow icon={Building2} label="Tipo predominante" value="Apartamento" />
-            <DetailRow icon={Landmark} label="Blocos identificados" value="Bloco 1 e Bloco 3" />
-            <DetailRow icon={CalendarDays} label="Entrega e idade" value="Data de entrega a informar" note="A idade será calculada automaticamente após o cadastro da entrega." />
-          </div>
-          <div className="notice-box"><Info size={16} /><span>As áreas abaixo são apresentadas como faixa observada nos registros enviados. A distribuição definitiva por bloco será preenchida quando você informar os dados oficiais.</span></div>
-        </div>
-        <div className="surface-card transparent-card">
-          <div className="section-heading"><div><p className="section-kicker">Transparência</p><h2>Leitura rápida</h2></div><ShieldCheck size={21} /></div>
-          <div className="transparent-stat"><strong>9</strong><span>transações de referência desde janeiro de 2025 exibidas nesta primeira versão</span></div>
-          <div className="mini-line"><span>Faixa de áreas</span><strong>120 a 125 m²</strong></div>
-          <div className="mini-line"><span>Período visível</span><strong>jan/2025 a jul/2026</strong></div>
-          <div className="mini-line"><span>Fonte</span><strong>Dados enviados pela equipe</strong></div>
-          <button className="outline-button" onClick={() => window.alert("Os dados oficiais por bloco serão adicionados nesta área.")}><Info size={16} /> O que falta cadastrar?</button>
-        </div>
+        <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
+        <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
       <section className="surface-card sales-card">
         <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Transações identificadas nos prints de referência do Latitud. A lista será ampliada conforme novos dados forem cadastrados.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
