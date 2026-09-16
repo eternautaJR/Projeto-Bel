@@ -297,7 +297,7 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
 function ActiveListingsPage() {
   return (
     <div className="content-stack">
-      <section className="intro-banner listings-intro"><div className="intro-icon"><Home size={25} /></div><div><p className="section-kicker">Aba 2</p><h2>Anúncios ativos</h2><p>Este espaço será usado para publicar os links das unidades e dos anúncios ativos da Bluedoor. A plataforma de empreendimentos permanece separada desta área.</p></div></section>
+      <section className="intro-banner listings-intro"><div className="intro-icon"><Home size={25} /></div><div><p className="section-kicker">Links das unidades</p><h2>Anúncios ativos</h2><p>Este espaço será usado para publicar os links das unidades e dos anúncios ativos da Bluedoor. A plataforma de empreendimentos permanece separada desta área.</p></div></section>
       <section className="surface-card empty-listings"><div className="empty-icon"><ExternalLink size={25} /></div><p className="section-kicker">Links das unidades</p><h2>Os anúncios entrarão aqui</h2><p>Quando os links públicos das unidades forem cadastrados, moradores, parceiros e administradoras poderão acessá-los por esta aba sem misturar essas informações com os dados internos dos condomínios.</p><button className="primary-button" onClick={() => window.alert("A área está pronta para receber os links das unidades.")}><ExternalLink size={16} /> Área preparada para os links</button></section>
     </div>
   );
