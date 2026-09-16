@@ -1,6 +1,9 @@
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
   BarChart3,
   BedDouble,
   Building2,
@@ -42,6 +45,9 @@ type SaleRow = {
   complement: string;
   position: string;
 };
+
+type SaleSortKey = "date" | "value" | "area" | "pricePerM2";
+type SortDirection = "asc" | "desc";
 
 const latitudSales: SaleRow[] = [
   { unit: "Blc 1 Apt 903", date: "26/07/2026", value: "R$ 2.122.302,77", pricePerM2: "R$ 16.978,42", area: "125 m²", complement: "Bloco 1 • Apt 903", position: "Fundos" },
@@ -264,7 +270,23 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
 
 function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium; setActiveCondo: (condo: Condominium) => void }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortKey, setSortKey] = useState<SaleSortKey | null>(null);
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const filteredSales = latitudSales.filter((sale) => `${sale.unit} ${sale.complement}`.toLowerCase().includes(searchTerm.toLowerCase()));
+  const sortedSales = [...filteredSales].sort((first, second) => {
+    if (!sortKey) return 0;
+    const firstValue = saleSortValue(first, sortKey);
+    const secondValue = saleSortValue(second, sortKey);
+    return sortDirection === "asc" ? firstValue - secondValue : secondValue - firstValue;
+  });
+  const toggleSort = (key: SaleSortKey) => {
+    if (sortKey === key) {
+      setSortDirection((current) => current === "asc" ? "desc" : "asc");
+      return;
+    }
+    setSortKey(key);
+    setSortDirection("asc");
+  };
   return (
     <div className="content-stack">
       <div className="page-tabs" aria-label="Subabas de empreendimentos">
@@ -286,9 +308,9 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
       <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "A informar", "179–187 m²": "A informar", "372 m²": "A informar" }} />
       <section className="surface-card sales-card">
         <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Latitud com unidade, bloco, data, valor, área e posição. A partir de janeiro de 2025, cada transação aparece individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
-        <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th>Data da venda</th><th>Valor</th><th>Área</th><th>Preço/m²</th><th>Posição</th></tr></thead><tbody>{filteredSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
-        {filteredSales.length === 0 && <div className="empty-filter"><Search size={17} /> Nenhuma unidade encontrada para essa busca.</div>}
-        <div className="table-footer"><span>Mostrando {filteredSales.length} registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
+        <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th><SortButton label="Data da venda" sortKey="date" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Valor" sortKey="value" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Área" sortKey="area" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Preço/m²" sortKey="pricePerM2" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th>Posição</th></tr></thead><tbody>{sortedSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
+        {sortedSales.length === 0 && <div className="empty-filter"><Search size={17} /> Nenhuma unidade encontrada para essa busca.</div>}
+        <div className="table-footer"><span>Mostrando {sortedSales.length} registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
       </section>
     </div>
   );
@@ -327,6 +349,21 @@ function FeatureItem({ icon: Icon, title, text }: { icon: LucideIcon; title: str
 
 function Metric({ icon: Icon, label, value, helper }: { icon: LucideIcon; label: string; value: string; helper: string }) {
   return <article className="surface-card metric-card"><div className="metric-icon"><Icon size={19} /></div><div><p>{label}</p><strong>{value}</strong><span>{helper}</span></div></article>;
+}
+
+function saleSortValue(sale: SaleRow, key: SaleSortKey) {
+  if (key === "date") {
+    const [day, month, year] = sale.date.split("/").map(Number);
+    return new Date(year, month - 1, day).getTime();
+  }
+  if (key === "area") return Number.parseFloat(sale.area.replace(" m²", "").replace(",", "."));
+  return Number.parseFloat(sale[key].replace(/R\$\s?/g, "").replace(/\./g, "").replace(",", "."));
+}
+
+function SortButton({ label, sortKey, activeKey, direction, onClick }: { label: string; sortKey: SaleSortKey; activeKey: SaleSortKey | null; direction: SortDirection; onClick: (key: SaleSortKey) => void }) {
+  const isActive = activeKey === sortKey;
+  const Icon = isActive ? (direction === "asc" ? ArrowUp : ArrowDown) : ArrowUpDown;
+  return <button className={`sort-button ${isActive ? "active" : ""}`} onClick={() => onClick(sortKey)} aria-label={`Ordenar ${label} em ordem ${isActive && direction === "desc" ? "crescente" : "decrescente"}`}><span>{label}</span><Icon size={13} /></button>;
 }
 
 function AverageAreaValues({ values }: { values?: Record<string, string> }) {

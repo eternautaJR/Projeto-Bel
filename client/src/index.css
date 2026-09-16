@@ -152,6 +152,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .data-table-wrap { overflow-x: auto; border: 1px solid #e7ece8; border-radius: 11px; }
 .data-table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 12px; }
 .data-table th { text-align: left; padding: 12px 13px; background: #f8faf8; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+.sort-button { display: inline-flex; align-items: center; gap: 5px; padding: 3px 5px; margin: -3px -5px; background: transparent; color: inherit; font-size: inherit; font-weight: inherit; text-transform: inherit; letter-spacing: inherit; border-radius: 5px; cursor: pointer; }
+.sort-button:hover { color: var(--blue-dark); background: #edf5f3; }
+.sort-button.active { color: var(--ink); }
 .data-table td { padding: 12px 13px; border-top: 1px solid #edf0ed; color: var(--ink-soft); white-space: nowrap; }
 .data-table tbody tr:hover { background: #fcfdfb; }
 .data-table td:first-child { color: var(--ink); }

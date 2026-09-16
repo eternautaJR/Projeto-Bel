@@ -16,3 +16,4 @@ Validação em 16/09/2026: a tabela do Latitud renderiza sem o aviso de chave Re
 Validação visual em 16/09/2026: a página Avalie com a gente não contém o rótulo “Aba 3”. O telefone oficial (21) 97405-0590 aparece como ação de ligação e o site bluedoorimoveis.com.br aparece em destaque como link externo.
 Validação visual em 16/09/2026: a página Anúncios ativos substituiu o rótulo “Aba 2” por “Links das unidades”, mantendo a função da área clara e alinhada ao uso de links públicos das unidades.
 Validação visual em 16/09/2026: Latitud exibe as faixas atualizadas de valor médio por metragem: 120–125 m², 153–156 m², 179–187 m² e 372 m².
+Validação funcional em 16/09/2026: os cabeçalhos Data da venda, Valor, Área e Preço/m² possuem botões de ordenação. O botão Valor foi testado nas duas direções: primeiro crescente e depois decrescente. O console do navegador não apresentou erros.
