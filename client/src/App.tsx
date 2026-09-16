@@ -283,7 +283,7 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="maior metragem informada para o Latitud" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
-      <AverageAreaValues values={{ "119–126 m²": "R$ 1.700.977,70", "150 m²": "A informar", "184–188 m²": "A informar", "+200 m²": "A informar" }} />
+      <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "A informar", "179–187 m²": "A informar", "372 m²": "A informar" }} />
       <section className="surface-card sales-card">
         <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Latitud com unidade, bloco, data, valor, área e posição. A partir de janeiro de 2025, cada transação aparece individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
         <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th>Data da venda</th><th>Valor</th><th>Área</th><th>Preço/m²</th><th>Posição</th></tr></thead><tbody>{filteredSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
@@ -330,7 +330,7 @@ function Metric({ icon: Icon, label, value, helper }: { icon: LucideIcon; label:
 }
 
 function AverageAreaValues({ values }: { values?: Record<string, string> }) {
-  const ranges = ["119–126 m²", "150 m²", "184–188 m²", "+200 m²"];
+  const ranges = ["120–125 m²", "153–156 m²", "179–187 m²", "372 m²"];
   return (
     <section className="surface-card average-area-card">
       <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
