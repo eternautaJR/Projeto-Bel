@@ -14,7 +14,6 @@ import {
   Info,
   Landmark,
   ListChecks,
-  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -307,8 +306,8 @@ function ActiveListingsPage() {
 function ContactPage() {
   return (
     <div className="content-stack">
-      <section className="intro-banner contact-intro"><div className="intro-icon"><MessageCircle size={25} /></div><div><p className="section-kicker">Aba 3</p><h2>Avalie com a gente</h2><p>Um canal direto para o cliente, parceiros e administradoras entrarem em contato com a Bluedoor após consultar as informações.</p></div></section>
-      <section className="surface-card contact-card"><div className="contact-card-icon"><Phone size={27} /></div><div><p className="section-kicker">Contato Bluedoor</p><h2>Telefone comercial</h2><p className="contact-placeholder">O número de telefone será informado pela equipe e ficará disponível aqui de forma destacada.</p><div className="contact-actions"><button className="primary-button" onClick={() => window.alert("O telefone será disponibilizado assim que cadastrado.")}><Phone size={16} /> Telefone a cadastrar</button><button className="outline-button" onClick={() => window.alert("O e-mail de contato será disponibilizado assim que cadastrado.")}><Mail size={16} /> E-mail a cadastrar</button></div></div></section>
+      <section className="intro-banner contact-intro"><div className="intro-icon"><MessageCircle size={25} /></div><div><p className="section-kicker">Canal direto</p><h2>Avalie com a gente</h2><p>Um canal direto para moradores, parceiros e administradoras entrarem em contato com a Bluedoor após consultar as informações.</p></div></section>
+      <section className="surface-card contact-card"><div className="contact-card-icon"><Phone size={27} /></div><div><p className="section-kicker">Contato Bluedoor</p><h2>Fale diretamente com a nossa equipe</h2><p className="contact-placeholder">Para dúvidas, oportunidades, atualizações ou informações sobre os empreendimentos, use o telefone oficial ou acesse o site da Bluedoor Imóveis.</p><div className="contact-actions"><a className="primary-button" href="tel:+5521974050590"><Phone size={16} /> (21) 97405-0590</a><a className="outline-button" href="https://bluedoorimoveis.com.br/" target="_blank" rel="noreferrer"><ExternalLink size={16} /> bluedoorimoveis.com.br</a></div></div></section>
       <div className="audience-grid"><AudienceCard icon={Users} title="Moradores" text="Tire dúvidas sobre as informações do seu empreendimento." /><AudienceCard icon={Handshake} title="Parceiros" text="Fale com a equipe sobre uma unidade ou oportunidade." /><AudienceCard icon={Landmark} title="Administradoras" text="Solicite alinhamentos ou atualizações de dados." /></div>
     </div>
   );
