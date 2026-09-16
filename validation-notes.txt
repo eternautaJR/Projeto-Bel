@@ -5,3 +5,4 @@ Validação visual em 16/09/2026:
 - Página /avalie-com-a-gente: mantém área de contato separada, com telefone/e-mail indicados como pendentes de cadastro.
 - Identidade visual usa a logo oficial carregada no armazenamento WebDev e preserva o layout sem rolagem horizontal em viewport desktop de 1440px.
 Validação móvel em 16/09/2026: em 390px de largura, a página Informações preserva hierarquia legível, botão para abrir o menu e cartões empilhados. A subaba Latitud mantém os controles de condomínio, o título, endereço, origem dos dados e indicadores em cartões verticais, sem corte de conteúdo no topo.
+Validação visual em 16/09/2026: o botão Fale conosco foi removido do topo e substituído pelo indicador estático “Fonte: Bel Radar”, com ícone de verificação e destaque discreto. O indicador aparece alinhado ao selo Ambiente de consulta.

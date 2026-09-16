@@ -172,7 +172,7 @@ function App() {
           </div>
           <div className="topbar-meta">
             <span className="status-pill"><CircleDot size={12} /> Ambiente de consulta</span>
-            <button className="support-button" onClick={() => navigate("Avalie com a gente")}><MessageCircle size={16} /> Fale conosco</button>
+            <div className="source-badge"><ShieldCheck size={16} /> Fonte: Bel Radar</div>
           </div>
         </header>
         {activePage === "Informações" && (showingCondo ? <CondominiumPage activeCondo={activeCondo} setActiveCondo={navigateCondo} /> : <InformationPage />)}
