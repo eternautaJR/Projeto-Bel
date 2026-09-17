@@ -374,7 +374,7 @@ function InformationPage() {
       <section className="surface-card how-it-works">
         <div className="section-heading"><div><p className="section-kicker">Navegação guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
         <div className="steps-grid">
-          <Step number="01" title="Escolha um empreendimento" text="Abra Condomínios no menu lateral e escolha Concept, Latitud, Mudrá ou Orygem." />
+          <Step number="01" title="Escolha um empreendimento" text="Abra Condomínios no menu lateral e escolha o de seu interesse." />
           <ArrowRight className="step-arrow" size={22} />
           <Step number="02" title="Consulte os dados" text="Visualize unidades, áreas por bloco, idade e vendas desde janeiro de 2025." />
           <ArrowRight className="step-arrow" size={22} />
