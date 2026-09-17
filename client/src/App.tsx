@@ -230,13 +230,8 @@ function InformationPage() {
           <p>Esta plataforma centraliza informações dos empreendimentos e suas unidades em um só lugar. Cada subaba apresenta exclusivamente os dados do respectivo condomínio.</p>
         </div>
       </section>
-      <div className="audience-grid">
-        <AudienceCard icon={Users} title="Para moradores" text="Acompanhe informações do seu empreendimento com linguagem simples e visão organizada." />
-        <AudienceCard icon={Handshake} title="Para parceiros" text="Consulte características, áreas e histórico antes de entrar em contato com a Bluedoor." />
-        <AudienceCard icon={Landmark} title="Para administradoras" text="Tenha uma fonte central de consulta para dados do condomínio e de suas unidades." />
-      </div>
       <section className="surface-card how-it-works">
-        <div className="section-heading"><div><p className="section-kicker">Navegação guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
+        <div className="section-heading"><div><p className="section-kicker">Visão guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
         <div className="steps-grid">
           <Step number="01" title="Escolha um empreendimento" text="Use as subabas no menu lateral: Concept, Latitud, Mudrá ou Orygem." />
           <ArrowRight className="step-arrow" size={22} />
@@ -245,6 +240,11 @@ function InformationPage() {
           <Step number="03" title="Entre em contato" text="Encontrou o que precisava? Fale com a equipe da Bluedoor pela plataforma." />
         </div>
       </section>
+      <div className="audience-grid">
+        <AudienceCard icon={Users} title="Para moradores" text="Acompanhe informações do seu empreendimento com linguagem simples e visão organizada." />
+        <AudienceCard icon={Handshake} title="Para parceiros" text="Consulte características, áreas e histórico antes de entrar em contato com a Bluedoor." />
+        <AudienceCard icon={Landmark} title="Para administradoras" text="Tenha uma fonte central de consulta para dados do condomínio e de suas unidades." />
+      </div>
       <section className="surface-card clarity-card">
         <div className="clarity-icon"><CheckCircle2 size={21} /></div>
         <div><strong>Regra de leitura</strong><p>Os dados dos condomínios não são misturados. Ao acessar uma subaba, você verá somente o empreendimento selecionado.</p></div>
