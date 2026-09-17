@@ -36,7 +36,7 @@ const LOGO_URL = `${import.meta.env.BASE_URL}logobdnovo.png`;
 
 const condominiumTabs = ["Concept", "Latitud", "Mudrá", "Orygem"] as const;
 type Condominium = (typeof condominiumTabs)[number];
-type MainPage = "Informações" | "Anúncios ativos" | "Avalie com a gente";
+type MainPage = "Informações" | "Condomínios" | "Anúncios ativos" | "Avalie com a gente";
 
 type SaleRow = {
   unit: string;
@@ -251,6 +251,7 @@ function elapsedAgeFrom(month: number, year: number) {
 
 const navIcons: Record<MainPage, LucideIcon> = {
   Informações: BarChart3,
+  Condomínios: Building2,
   "Anúncios ativos": Home,
   "Avalie com a gente": MessageCircle,
 };
@@ -261,13 +262,15 @@ function condoToSlug(condo: Condominium) {
 
 function pageToPath(page: MainPage) {
   if (page === "Informações") return "/";
+  if (page === "Condomínios") return "/condominios";
   if (page === "Anúncios ativos") return "/anuncios-ativos";
   return "/avalie-com-a-gente";
 }
 
 function getRouteState(path: string): { page: MainPage; condo: Condominium } {
   const condo = condominiumTabs.find((item) => path === `/empreendimentos/${condoToSlug(item)}`);
-  if (condo) return { page: "Informações", condo };
+  if (condo) return { page: "Condomínios", condo };
+  if (path === "/condominios") return { page: "Condomínios", condo: "Latitud" };
   if (path === "/anuncios-ativos") return { page: "Anúncios ativos", condo: "Latitud" };
   if (path === "/avalie-com-a-gente") return { page: "Avalie com a gente", condo: "Latitud" };
   return { page: "Informações", condo: "Latitud" };
@@ -283,6 +286,7 @@ function DashboardApp() {
 
   const pageTitle = useMemo(() => {
     if (activePage === "Informações") return "Informações";
+    if (activePage === "Condomínios") return "Condomínios";
     if (activePage === "Anúncios ativos") return "Anúncios ativos";
     return "Avalie com a gente";
   }, [activePage]);
@@ -311,6 +315,10 @@ function DashboardApp() {
           <button className={`nav-item ${activePage === "Informações" ? "active" : ""}`} onClick={() => navigate("Informações")}>
             <BarChart3 size={18} />
             <span>Informações</span>
+          </button>
+          <button className={`nav-item ${activePage === "Condomínios" ? "active" : ""}`} onClick={() => navigate("Condomínios")}>
+            <Building2 size={18} />
+            <span>Condomínios</span>
           </button>
           <div className="subnav" aria-label="Empreendimentos">
             {condominiumTabs.map((condo) => (
@@ -351,7 +359,8 @@ function DashboardApp() {
             <div className="source-badge"><ShieldCheck size={16} /> Fonte: Bel Radar</div>
           </div>
         </header>
-        {activePage === "Informações" && (showingCondo ? <CondominiumPage activeCondo={activeCondo} setActiveCondo={navigateCondo} /> : <InformationPage />)}
+        {activePage === "Informações" && <InformationPage />}
+        {activePage === "Condomínios" && (showingCondo ? <CondominiumPage activeCondo={activeCondo} setActiveCondo={navigateCondo} /> : <CondominiumsPage onSelect={navigateCondo} />)}
         {activePage === "Anúncios ativos" && <ActiveListingsPage />}
         {activePage === "Avalie com a gente" && <ContactPage />}
       </main>
@@ -365,7 +374,7 @@ function InformationPage() {
       <section className="surface-card how-it-works">
         <div className="section-heading"><div><p className="section-kicker">Navegação guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
         <div className="steps-grid">
-          <Step number="01" title="Escolha um empreendimento" text="Use as subabas no menu lateral: Concept, Latitud, Mudrá ou Orygem." />
+          <Step number="01" title="Escolha um empreendimento" text="Abra Condomínios no menu lateral e escolha Concept, Latitud, Mudrá ou Orygem." />
           <ArrowRight className="step-arrow" size={22} />
           <Step number="02" title="Consulte os dados" text="Visualize unidades, áreas por bloco, idade e vendas desde janeiro de 2025." />
           <ArrowRight className="step-arrow" size={22} />
@@ -394,6 +403,36 @@ function InformationPage() {
         <AudienceCard icon={Handshake} title="Para parceiros" text="Consulte características, áreas e histórico antes de entrar em contato com a Bluedoor." />
         <AudienceCard icon={Landmark} title="Para administradoras" text="Tenha uma fonte central de consulta para dados do condomínio e de suas unidades." />
       </div>
+    </div>
+  );
+}
+
+function CondominiumsPage({ onSelect }: { onSelect: (condo: Condominium) => void }) {
+  const summaries: Array<{ name: Condominium; units: string; address: string }> = [
+    { name: "Concept", units: "77 unidades", address: "Avenida Rosauro Estellita, 35" },
+    { name: "Latitud", units: "192 unidades", address: "Avenida Rosauro Estelita, 155" },
+    { name: "Mudrá", units: "144 unidades", address: "Avenida Cândido Portinari, 60" },
+    { name: "Orygem", units: "192 unidades", address: "Avenida Candido Portinari, 170" },
+  ];
+
+  return (
+    <div className="content-stack">
+      <section className="intro-banner">
+        <div className="intro-icon"><Building2 size={25} /></div>
+        <div><p className="section-kicker">Visão dos empreendimentos</p><h2>Condomínios</h2><p>Selecione um condomínio para consultar suas informações gerais, referências de valores e histórico de vendas.</p></div>
+      </section>
+      <section className="surface-card feature-overview">
+        <div className="section-heading"><div><p className="section-kicker">Consulta rápida</p><h2>Escolha um condomínio</h2></div><Building2 size={21} /></div>
+        <div className="feature-grid condominium-grid">
+          {summaries.map((condo) => (
+            <button className="feature-item condominium-link-card" key={condo.name} onClick={() => onSelect(condo.name)}>
+              <div className="feature-icon"><Building2 size={20} /></div>
+              <div><strong>{condo.name}</strong><p>{condo.units}<br />{condo.address}</p></div>
+              <ArrowRight className="condominium-link-arrow" size={17} />
+            </button>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

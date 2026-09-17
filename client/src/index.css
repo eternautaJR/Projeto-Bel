@@ -98,6 +98,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .feature-item { display: flex; gap: 11px; align-items: flex-start; padding: 15px; border: 1px solid #e9eeea; border-radius: 12px; }
 .feature-icon { margin-bottom: 0; flex: 0 0 40px; }
 .feature-item strong { display: block; margin: 2px 0 5px; font-size: 13px; }
+.condominium-link-card { width: 100%; background: #fff; color: var(--ink); text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.condominium-link-card:hover { transform: translateY(-2px); border-color: rgba(197,161,75,.7); box-shadow: 0 10px 22px rgba(8,47,37,.08); }
+.condominium-link-arrow { color: var(--gold); margin: auto 0 auto auto; flex: 0 0 auto; }
 
 .page-tabs { display: flex; gap: 8px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
 .page-tabs button { background: transparent; color: var(--ink-soft); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
