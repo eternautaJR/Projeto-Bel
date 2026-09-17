@@ -46,6 +46,8 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .nav-item:hover, .subnav-item:hover { background: rgba(255,255,255,.08); color: white; }
 .nav-item.active { color: #f8f1d9; background: linear-gradient(90deg, rgba(35,122,89,.78), rgba(35,122,89,.36)); box-shadow: inset 3px 0 var(--gold); }
 .nav-chevron { margin-left: auto; opacity: .8; }
+.nav-expand-icon { margin-left: auto; opacity: .82; transition: transform .2s cubic-bezier(.23,1,.32,1); }
+.nav-expand-icon.open { transform: rotate(180deg); }
 .subnav { margin: 2px 0 14px 16px; padding: 0 0 2px 16px; border-left: 1px solid rgba(255,255,255,.2); }
 .subnav-item { padding: 9px 10px; font-size: 13px; color: rgba(230,242,236,.72); }
 .subnav-item.selected { background: rgba(35,122,89,.45); color: #fff6d7; }

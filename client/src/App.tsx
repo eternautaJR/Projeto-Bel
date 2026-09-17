@@ -9,6 +9,7 @@ import {
   Building2,
   CalendarDays,
   CarFront,
+  ChevronDown,
   DoorOpen,
   ExternalLink,
   FileText,
@@ -283,6 +284,7 @@ function DashboardApp() {
   const activeCondo = routeState.condo;
   const showingCondo = location.startsWith("/empreendimentos/");
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showCondominiumSubnav, setShowCondominiumSubnav] = useState(showingCondo);
 
   const pageTitle = useMemo(() => {
     if (activePage === "Informações") return "Informações";
@@ -293,12 +295,19 @@ function DashboardApp() {
 
   const navigate = (page: MainPage) => {
     setLocation(pageToPath(page));
+    if (page !== "Condomínios") setShowCondominiumSubnav(false);
     setShowSidebar(false);
   };
 
   const navigateCondo = (condo: Condominium) => {
     setLocation(`/empreendimentos/${condoToSlug(condo)}`);
+    setShowCondominiumSubnav(true);
     setShowSidebar(false);
+  };
+
+  const toggleCondominiums = () => {
+    setShowCondominiumSubnav((current) => !current);
+    if (activePage !== "Condomínios") setLocation(pageToPath("Condomínios"));
   };
 
   return (
@@ -316,24 +325,27 @@ function DashboardApp() {
             <BarChart3 size={18} />
             <span>Informações</span>
           </button>
-          <button className={`nav-item ${activePage === "Condomínios" ? "active" : ""}`} onClick={() => navigate("Condomínios")}>
+          <button className={`nav-item ${activePage === "Condomínios" ? "active" : ""}`} onClick={toggleCondominiums} aria-expanded={showCondominiumSubnav} aria-controls="condominium-subnav">
             <Building2 size={18} />
             <span>Condomínios</span>
+            <ChevronDown className={`nav-expand-icon ${showCondominiumSubnav ? "open" : ""}`} size={16} />
           </button>
-          <div className="subnav" aria-label="Empreendimentos">
-            {condominiumTabs.map((condo) => (
-              <button
-                key={condo}
-                className={`subnav-item ${showingCondo && activeCondo === condo ? "selected" : ""}`}
-                onClick={() => {
-                  navigateCondo(condo);
-                }}
-              >
-                <span className="subnav-dot" />
-                <span>{condo}</span>
-              </button>
-            ))}
-          </div>
+          {showCondominiumSubnav && (
+            <div className="subnav" id="condominium-subnav" aria-label="Empreendimentos">
+              {condominiumTabs.map((condo) => (
+                <button
+                  key={condo}
+                  className={`subnav-item ${showingCondo && activeCondo === condo ? "selected" : ""}`}
+                  onClick={() => {
+                    navigateCondo(condo);
+                  }}
+                >
+                  <span className="subnav-dot" />
+                  <span>{condo}</span>
+                </button>
+              ))}
+            </div>
+          )}
           <button className={`nav-item ${activePage === "Anúncios ativos" ? "active" : ""}`} onClick={() => navigate("Anúncios ativos")}>
             <Home size={18} />
             <span>Anúncios ativos</span>
