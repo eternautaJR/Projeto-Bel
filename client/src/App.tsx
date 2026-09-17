@@ -156,7 +156,7 @@ const orygemSales: SaleRow[] = [
 const conceptAreaRanges = [
   { label: "152–156 m²", minimum: 152, maximum: 156 },
   { label: "185 m²", minimum: 185, maximum: 185 },
-  { label: "205 m²", minimum: 205, maximum: 205 },
+  { label: "205–260 m²", minimum: 205, maximum: 260 },
   { label: "413 m²", minimum: 413, maximum: 413 },
 ];
 

@@ -1,1 +1,1 @@
-Validação do preview em 17/09/2026: Orygem e Latitud exibem 192 unidades no total, distribuídas como Bloco 1 – 60, Bloco 2 – 36, Bloco 3 – 60 e Bloco 4 – 36. A soma dos quatro blocos foi confirmada como 192. Os demais dados e históricos permanecem intactos.
+Validação do preview em 17/09/2026: o Concept exibe a faixa 205–260 m² com valor médio de R$ 3.103.341,28, calculado a partir de três transações (205 m², 205 m² e 259 m²). As outras faixas, as sete linhas do histórico e todos os dados dos demais condomínios permanecem preservados.
