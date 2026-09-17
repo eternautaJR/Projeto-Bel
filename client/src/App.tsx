@@ -9,9 +9,10 @@ import {
   Building2,
   CalendarDays,
   CarFront,
-  CheckCircle2,
+  DoorOpen,
   ExternalLink,
   FileText,
+  Gauge,
   Handshake,
   Home,
   Info,
@@ -98,6 +99,72 @@ const latitudSales: SaleRow[] = [
   { unit: "Blc 1 Apt 1004", date: "21/01/2025", value: "R$ 1.734.206,61", pricePerM2: "R$ 14.332,29", area: "121 m²", complement: "Bloco 1 • Apt 1004", position: "Fundos" },
   { unit: "Blc 3 Apt 1003", date: "12/01/2025", value: "R$ 1.728.048,73", pricePerM2: "R$ 13.824,39", area: "125 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
 ];
+
+const orygemSales: SaleRow[] = [
+  { unit: "Blc 3 Apt 802", date: "19/08/2026", value: "R$ 1.750.408,30", pricePerM2: "R$ 14.230,96", area: "123 m²", complement: "Bloco 3 • Apt 802", position: "Fundos" },
+  { unit: "Blc 3 Apt 606", date: "13/08/2026", value: "R$ 2.014.816,40", pricePerM2: "R$ 15.990,61", area: "126 m²", complement: "Bloco 3 • Apt 606", position: "Fundos" },
+  { unit: "Blc 3 Apt 501", date: "09/08/2026", value: "R$ 1.680.000,00", pricePerM2: "R$ 13.658,54", area: "123 m²", complement: "Bloco 3 • Apt 501", position: "Fundos" },
+  { unit: "Blc 3 Apt 405", date: "12/07/2026", value: "R$ 1.704.045,00", pricePerM2: "R$ 13.742,30", area: "124 m²", complement: "Bloco 3 • Apt 405", position: "Fundos" },
+  { unit: "Blc 3 Apt 902", date: "18/06/2026", value: "R$ 1.765.800,00", pricePerM2: "R$ 14.356,10", area: "123 m²", complement: "Bloco 3 • Apt 902", position: "Fundos" },
+  { unit: "Blc 3 Apt 1103", date: "15/06/2026", value: "R$ 2.960.831,41", pricePerM2: "R$ 16.091,48", area: "184 m²", complement: "Bloco 3 • Apt 1103", position: "Fundos" },
+  { unit: "Blc 3 Apt 904", date: "04/06/2026", value: "R$ 1.852.523,63", pricePerM2: "R$ 14.939,71", area: "124 m²", complement: "Bloco 3 • Apt 904", position: "Fundos" },
+  { unit: "Blc 3 Apt 204", date: "25/05/2026", value: "R$ 1.787.337,75", pricePerM2: "R$ 14.414,01", area: "124 m²", complement: "Bloco 3 • Apt 204", position: "Fundos" },
+  { unit: "Blc 3 Apt 305", date: "24/05/2026", value: "R$ 1.869.417,00", pricePerM2: "R$ 15.075,94", area: "124 m²", complement: "Bloco 3 • Apt 305", position: "Fundos" },
+  { unit: "Blc 3 Apt 302", date: "21/05/2026", value: "R$ 1.668.685,98", pricePerM2: "R$ 13.566,55", area: "123 m²", complement: "Bloco 3 • Apt 302", position: "Fundos" },
+  { unit: "Blc 3 Apt 104", date: "20/05/2026", value: "R$ 1.530.300,00", pricePerM2: "R$ 12.341,13", area: "124 m²", complement: "Bloco 3 • Apt 104", position: "Fundos" },
+  { unit: "Blc 3 Apt 703", date: "20/05/2026", value: "R$ 1.687.332,40", pricePerM2: "R$ 13.286,08", area: "127 m²", complement: "Bloco 3 • Apt 703", position: "Fundos" },
+  { unit: "Blc 3 Apt 906", date: "17/05/2026", value: "R$ 1.558.310,40", pricePerM2: "R$ 12.367,54", area: "126 m²", complement: "Bloco 3 • Apt 906", position: "Fundos" },
+  { unit: "Blc 3 Apt 403", date: "11/05/2026", value: "R$ 1.717.983,70", pricePerM2: "R$ 13.527,43", area: "127 m²", complement: "Bloco 3 • Apt 403", position: "Fundos" },
+  { unit: "Blc 3 Apt 1004", date: "26/04/2026", value: "R$ 2.004.235,53", pricePerM2: "R$ 16.163,19", area: "124 m²", complement: "Bloco 3 • Apt 1004", position: "Fundos" },
+  { unit: "Blc 3 Apt 601", date: "19/04/2026", value: "R$ 1.785.388,70", pricePerM2: "R$ 14.515,36", area: "123 m²", complement: "Bloco 3 • Apt 601", position: "Fundos" },
+  { unit: "Blc 3 Apt 1003", date: "13/04/2026", value: "R$ 1.700.000,00", pricePerM2: "R$ 13.385,83", area: "127 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
+  { unit: "Blc 3 Apt 705", date: "12/04/2026", value: "R$ 1.811.902,77", pricePerM2: "R$ 14.612,12", area: "124 m²", complement: "Bloco 3 • Apt 705", position: "Fundos" },
+  { unit: "Blc 3 Apt 604", date: "09/04/2026", value: "R$ 1.976.273,16", pricePerM2: "R$ 15.937,69", area: "124 m²", complement: "Bloco 3 • Apt 604", position: "Fundos" },
+  { unit: "Blc 3 Apt 702", date: "09/04/2026", value: "R$ 1.941.513,35", pricePerM2: "R$ 15.784,66", area: "123 m²", complement: "Bloco 3 • Apt 702", position: "Fundos" },
+  { unit: "Blc 3 Apt 502", date: "01/04/2026", value: "R$ 1.715.182,40", pricePerM2: "R$ 13.944,57", area: "123 m²", complement: "Bloco 3 • Apt 502", position: "Fundos" },
+  { unit: "Blc 3 Apt 102", date: "23/03/2026", value: "R$ 1.762.919,71", pricePerM2: "R$ 14.332,68", area: "123 m²", complement: "Bloco 3 • Apt 102", position: "Fundos" },
+  { unit: "Blc 3 Apt 402", date: "23/03/2026", value: "R$ 1.825.635,75", pricePerM2: "R$ 14.842,57", area: "123 m²", complement: "Bloco 3 • Apt 402", position: "Fundos" },
+  { unit: "Blc 3 Apt 704", date: "22/03/2026", value: "R$ 1.793.512,34", pricePerM2: "R$ 14.463,81", area: "124 m²", complement: "Bloco 3 • Apt 704", position: "Fundos" },
+  { unit: "Blc 3 Apt 803", date: "18/03/2026", value: "R$ 1.936.660,87", pricePerM2: "R$ 15.249,30", area: "127 m²", complement: "Bloco 3 • Apt 803", position: "Fundos" },
+  { unit: "Blc 3 Apt 505", date: "17/03/2026", value: "R$ 1.762.475,00", pricePerM2: "R$ 14.213,51", area: "124 m²", complement: "Bloco 3 • Apt 505", position: "Fundos" },
+  { unit: "Blc 3 Apt 103", date: "15/03/2026", value: "R$ 1.640.000,00", pricePerM2: "R$ 12.913,39", area: "127 m²", complement: "Bloco 3 • Apt 103", position: "Fundos" },
+  { unit: "Blc 3 Apt 202", date: "10/03/2026", value: "R$ 1.565.373,01", pricePerM2: "R$ 12.726,61", area: "123 m²", complement: "Bloco 3 • Apt 202", position: "Fundos" },
+  { unit: "Blc 3 Apt 303", date: "10/03/2026", value: "R$ 1.715.713,33", pricePerM2: "R$ 13.509,55", area: "127 m²", complement: "Bloco 3 • Apt 303", position: "Fundos" },
+  { unit: "Blc 3 Apt 603", date: "10/03/2026", value: "R$ 1.915.197,27", pricePerM2: "R$ 15.080,29", area: "127 m²", complement: "Bloco 3 • Apt 603", position: "Fundos" },
+  { unit: "Blc 3 Apt 304", date: "09/03/2026", value: "R$ 1.650.917,60", pricePerM2: "R$ 13.313,85", area: "124 m²", complement: "Bloco 3 • Apt 304", position: "Fundos" },
+  { unit: "Blc 3 Apt 1102", date: "04/03/2026", value: "R$ 2.753.673,39", pricePerM2: "R$ 15.047,40", area: "183 m²", complement: "Bloco 3 • Apt 1102", position: "Fundos" },
+  { unit: "Blc 3 Apt 706", date: "04/03/2026", value: "R$ 1.944.014,93", pricePerM2: "R$ 15.428,69", area: "126 m²", complement: "Bloco 3 • Apt 706", position: "Fundos" },
+  { unit: "Blc 3 Apt 401", date: "03/03/2026", value: "R$ 1.621.960,00", pricePerM2: "R$ 13.186,67", area: "123 m²", complement: "Bloco 3 • Apt 401", position: "Fundos" },
+  { unit: "Blc 3 Apt 804", date: "01/03/2026", value: "R$ 1.658.063,94", pricePerM2: "R$ 13.371,48", area: "124 m²", complement: "Bloco 3 • Apt 804", position: "Fundos" },
+  { unit: "Blc 3 Apt 805", date: "25/02/2026", value: "R$ 1.713.241,14", pricePerM2: "R$ 13.816,46", area: "124 m²", complement: "Bloco 3 • Apt 805", position: "Fundos" },
+  { unit: "Blc 3 Apt 1002", date: "24/02/2026", value: "R$ 1.930.906,20", pricePerM2: "R$ 15.698,42", area: "123 m²", complement: "Bloco 3 • Apt 1002", position: "Fundos" },
+  { unit: "Blc 3 Apt 602", date: "12/02/2026", value: "R$ 1.720.538,69", pricePerM2: "R$ 13.988,12", area: "123 m²", complement: "Bloco 3 • Apt 602", position: "Fundos" },
+  { unit: "Blc 3 Apt 801", date: "10/02/2026", value: "R$ 1.781.571,43", pricePerM2: "R$ 14.484,32", area: "123 m²", complement: "Bloco 3 • Apt 801", position: "Fundos" },
+  { unit: "Blc 1 Apt 1101", date: "14/08/2025", value: "R$ 2.905.195,69", pricePerM2: "R$ 15.371,41", area: "189 m²", complement: "Bloco 1 • Apt 1101", position: "Frente" },
+];
+
+const orygemAreaRanges = [
+  { label: "123–125 m²", minimum: 123, maximum: 125 },
+  { label: "153–156 m²", minimum: 153, maximum: 156 },
+  { label: "179–189 m²", minimum: 179, maximum: 189 },
+  { label: "372 m²", minimum: 372, maximum: 372 },
+];
+
+function salesInAreaRange(sales: SaleRow[], minimum: number, maximum: number) {
+  return sales.filter((sale) => {
+    const area = Number.parseFloat(sale.area.replace(" m²", "").replace(",", "."));
+    return area >= minimum && area <= maximum;
+  });
+}
+
+const orygemAverageValues = Object.fromEntries(orygemAreaRanges.map(({ label, minimum, maximum }) => {
+  const matchingSales = salesInAreaRange(orygemSales, minimum, maximum);
+  if (matchingSales.length === 0) return [label, "Sem dados recentes"];
+  const total = matchingSales.reduce((sum, sale) => sum + Number.parseFloat(sale.value.replace(/R\$\s?/g, "").replace(/\./g, "").replace(",", ".")), 0);
+  return [label, new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(total / matchingSales.length)];
+}));
+
+const orygemTransactionCounts = Object.fromEntries(orygemAreaRanges.map(({ label, minimum, maximum }) => [label, salesInAreaRange(orygemSales, minimum, maximum).length]));
 
 function elapsedAgeFrom(month: number, year: number) {
   const today = new Date();
@@ -222,16 +289,8 @@ function DashboardApp() {
 function InformationPage() {
   return (
     <div className="content-stack">
-      <section className="intro-banner">
-        <div className="intro-icon"><Info size={25} /></div>
-        <div>
-          <p className="section-kicker">Como funciona</p>
-          <h2>Uma consulta clara para quem precisa tomar boas decisões.</h2>
-          <p>Esta plataforma centraliza informações dos empreendimentos e suas unidades em um só lugar. Cada subaba apresenta exclusivamente os dados do respectivo condomínio.</p>
-        </div>
-      </section>
       <section className="surface-card how-it-works">
-        <div className="section-heading"><div><p className="section-kicker">Visão guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
+        <div className="section-heading"><div><p className="section-kicker">Navegação guiada</p><h2>Como consultar</h2></div><Sparkles size={21} /></div>
         <div className="steps-grid">
           <Step number="01" title="Escolha um empreendimento" text="Use as subabas no menu lateral: Concept, Latitud, Mudrá ou Orygem." />
           <ArrowRight className="step-arrow" size={22} />
@@ -240,14 +299,13 @@ function InformationPage() {
           <Step number="03" title="Entre em contato" text="Encontrou o que precisava? Fale com a equipe da Bluedoor pela plataforma." />
         </div>
       </section>
-      <div className="audience-grid">
-        <AudienceCard icon={Users} title="Para moradores" text="Acompanhe informações do seu empreendimento com linguagem simples e visão organizada." />
-        <AudienceCard icon={Handshake} title="Para parceiros" text="Consulte características, áreas e histórico antes de entrar em contato com a Bluedoor." />
-        <AudienceCard icon={Landmark} title="Para administradoras" text="Tenha uma fonte central de consulta para dados do condomínio e de suas unidades." />
-      </div>
-      <section className="surface-card clarity-card">
-        <div className="clarity-icon"><CheckCircle2 size={21} /></div>
-        <div><strong>Regra de leitura</strong><p>Os dados dos condomínios não são misturados. Ao acessar uma subaba, você verá somente o empreendimento selecionado.</p></div>
+      <section className="intro-banner">
+        <div className="intro-icon"><Info size={25} /></div>
+        <div>
+          <p className="section-kicker">Como funciona</p>
+          <h2>Uma consulta clara para quem precisa tomar boas decisões.</h2>
+          <p>Esta plataforma centraliza informações dos empreendimentos e suas unidades em um só lugar. Cada subaba apresenta exclusivamente os dados do respectivo condomínio.</p>
+        </div>
       </section>
       <section className="surface-card feature-overview">
         <div className="section-heading"><div><p className="section-kicker">O que você encontra</p><h2>Informação sem ruído</h2></div><FileText size={21} /></div>
@@ -258,6 +316,11 @@ function InformationPage() {
           <FeatureItem icon={BarChart3} title="Vendas desde jan/2025" text="Histórico organizado a partir de janeiro de 2025." />
         </div>
       </section>
+      <div className="audience-grid">
+        <AudienceCard icon={Users} title="Para moradores" text="Acompanhe informações do seu empreendimento com linguagem simples e visão organizada." />
+        <AudienceCard icon={Handshake} title="Para parceiros" text="Consulte características, áreas e histórico antes de entrar em contato com a Bluedoor." />
+        <AudienceCard icon={Landmark} title="Para administradoras" text="Tenha uma fonte central de consulta para dados do condomínio e de suas unidades." />
+      </div>
     </div>
   );
 }
@@ -273,13 +336,73 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
       <div className="page-tabs" aria-label="Subabas de empreendimentos">
         {condominiumTabs.map((condo) => <button key={condo} className={activeCondo === condo ? "active" : ""} onClick={() => setActiveCondo(condo)}>{condo}</button>)}
       </div>
-      <section className="intro-banner">
-        <div className="intro-icon"><Building2 size={25} /></div>
-        <div><p className="section-kicker">Empreendimento selecionado</p><h2>{activeCondo}</h2><p>Esta subaba está estruturada e pronta para receber os dados oficiais do empreendimento. Assim que as informações forem disponibilizadas, elas aparecerão aqui de forma organizada, sem mistura com os demais condomínios.</p></div>
+      <section className="property-header">
+        <div>
+          <p className="section-kicker">Empreendimento selecionado</p>
+          <h2>{activeCondo}</h2>
+          <div className="property-location"><MapPin size={15} /> {activeCondo === "Orygem" ? "Avenida Candido Portinari, 170 · Barra da Tijuca · Rio de Janeiro/RJ" : activeCondo === "Concept" ? "Avenida Rosauro Estellita, 35 · Barra da Tijuca · Rio de Janeiro/RJ" : "Endereço a informar · Rio de Janeiro/RJ"}</div>
+        </div>
       </section>
-      {activeCondo === "Orygem" && <AverageAreaValues />}
-      <section className="surface-card empty-listings"><div className="empty-icon"><FileText size={25} /></div><p className="section-kicker">Dados em preparação</p><h2>Informações do {activeCondo} serão inseridas aqui</h2><p>Áreas por bloco, entrega e idade, unidades e vendas desde janeiro de 2025 serão cadastradas nesta subaba exclusivamente para este empreendimento.</p></section>
+      <section className="metrics-grid">
+        <Metric icon={Building2} label="Total de unidades" value={activeCondo === "Orygem" ? "192" : activeCondo === "Concept" ? "77" : "A informar"} helper={activeCondo === "Orygem" ? "Bloco 1 – 60 · Bloco 2 – 36 · Bloco 3 – 60 · Bloco 4 – 36" : activeCondo === "Concept" ? "Bloco 1 – 43 · Bloco 2 – 34" : "Distribuição por bloco a informar"} />
+        <Metric icon={Ruler} label="Área total do condomínio" value={activeCondo === "Orygem" ? "17.000 m²" : activeCondo === "Concept" || activeCondo === "Mudrá" ? "8.573 m²" : "A informar"} helper="" />
+        <Metric icon={Gauge} label="Taxa de ocupação" value="A informar" helper="" />
+        <Metric icon={CalendarDays} label="Entrega e idade" value={activeCondo === "Orygem" ? "06/2024" : activeCondo === "Concept" ? "05/2025" : "A informar"} helper={activeCondo === "Orygem" ? elapsedAgeFrom(5, 2024) : activeCondo === "Concept" ? elapsedAgeFrom(4, 2025) : ""} />
+      </section>
+      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <PendingAverageAreaValues ranges={["152–156 m²", "185 m²", "205 m²", "413 m²"]} /> : <PendingAverageAreaValues />}
+      {activeCondo === "Orygem" ? <OrygemSalesHistory /> : <PendingSalesHistory condo={activeCondo} />}
     </div>
+  );
+}
+
+function PendingAverageAreaValues({ ranges = ["Faixa 01", "Faixa 02", "Faixa 03", "Faixa 04"] }: { ranges?: string[] }) {
+  return (
+    <section className="surface-card average-area-card">
+      <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
+      <p className="section-description">As faixas de metragem e os valores médios serão preenchidos com os dados oficiais deste empreendimento.</p>
+      <div className="area-values-grid">
+        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>A informar</strong><small>valor médio da faixa</small></div>)}
+      </div>
+    </section>
+  );
+}
+
+function PendingSalesHistory({ condo }: { condo: Condominium }) {
+  return (
+    <section className="surface-card sales-card">
+      <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">O histórico do {condo} será organizado com unidade, bloco, data, valor, área, preço/m² e posição.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input placeholder="Buscar unidade ou bloco" disabled /></label><button className="filter-button" disabled><SlidersHorizontal size={16} /> Filtros</button></div></div>
+      <div className="empty-filter"><FileText size={17} /> Registros de vendas desde janeiro de 2025 serão adicionados nesta subaba.</div>
+      <div className="table-footer"><span>Aguardando dados oficiais</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
+    </section>
+  );
+}
+
+function OrygemSalesHistory() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortKey, setSortKey] = useState<SaleSortKey | null>(null);
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const filteredSales = orygemSales.filter((sale) => `${sale.unit} ${sale.complement}`.toLowerCase().includes(searchTerm.toLowerCase()));
+  const sortedSales = [...filteredSales].sort((first, second) => {
+    const firstValue = saleSortValue(first, sortKey ?? "date");
+    const secondValue = saleSortValue(second, sortKey ?? "date");
+    const direction = sortKey ? sortDirection : "desc";
+    return direction === "asc" ? firstValue - secondValue : secondValue - firstValue;
+  });
+  const toggleSort = (key: SaleSortKey) => {
+    if (sortKey === key) {
+      setSortDirection((current) => current === "asc" ? "desc" : "asc");
+      return;
+    }
+    setSortKey(key);
+    setSortDirection("asc");
+  };
+  return (
+    <section className="surface-card sales-card">
+      <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Orygem com unidade, bloco, data, valor, área, preço/m² e posição. Os 40 registros aparecem individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
+      <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th><SortButton label="Data da venda" sortKey="date" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Valor" sortKey="value" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Área" sortKey="area" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Preço/m²" sortKey="pricePerM2" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th>Posição</th></tr></thead><tbody>{sortedSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
+      {sortedSales.length === 0 && <div className="empty-filter"><Search size={17} /> Nenhuma unidade encontrada para essa busca.</div>}
+      <div className="table-footer"><span>Mostrando {sortedSales.length} de 40 registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
+    </section>
   );
 }
 
@@ -311,13 +434,13 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
         <div>
           <p className="section-kicker">Empreendimento selecionado</p>
           <h2>Latitud</h2>
-          <div className="property-location"><MapPin size={15} /> Avenida Rosauro Estelita, 155 · Rio de Janeiro/RJ</div>
+          <div className="property-location"><MapPin size={15} /> Avenida Rosauro Estelita, 155 · Barra da Tijuca · Rio de Janeiro/RJ</div>
         </div>
       </section>
       <section className="metrics-grid">
-        <Metric icon={Building2} label="Total de unidades" value="204" helper="Bloco 1 – 60 · Bloco 2 – 36 · Bloco 3 – 60 · Bloco 4 – 36" />
-        <Metric icon={Ruler} label="Menor área observada" value="120 m²" helper="" />
-        <Metric icon={Ruler} label="Maior área observada" value="372 m²" helper="" />
+        <Metric icon={Building2} label="Total de unidades" value="192" helper="Bloco 1 – 60 · Bloco 2 – 36 · Bloco 3 – 60 · Bloco 4 – 36" />
+        <Metric icon={Ruler} label="Área total do condomínio" value="17.000 m²" helper="" />
+        <Metric icon={Gauge} label="Taxa de ocupação" value="A informar" helper="" />
         <Metric icon={CalendarDays} label="Entrega e idade" value="04/2023" helper={elapsedAgeFrom(3, 2023)} />
       </section>
       <AverageAreaValues values={{ "120–125 m²": "R$ 1.700.977,70", "153–156 m²": "R$ 2.083.897,07", "179–187 m²": "R$ 2.613.485,80", "372 m²": "R$ 4.510.318,83" }} />
@@ -334,8 +457,25 @@ function LatitudPage({ activeCondo, setActiveCondo }: { activeCondo: Condominium
 function ActiveListingsPage() {
   return (
     <div className="content-stack">
-      <section className="intro-banner listings-intro"><div className="intro-icon"><Home size={25} /></div><div><p className="section-kicker">Links das unidades</p><h2>Anúncios ativos</h2><p>Este espaço será usado para publicar os links das unidades e dos anúncios ativos da Bluedoor. A plataforma de empreendimentos permanece separada desta área.</p></div></section>
-      <section className="surface-card empty-listings"><div className="empty-icon"><ExternalLink size={25} /></div><p className="section-kicker">Links das unidades</p><h2>Os anúncios entrarão aqui</h2><p>Quando os links públicos das unidades forem cadastrados, moradores, parceiros e administradoras poderão acessá-los por esta aba sem misturar essas informações com os dados internos dos condomínios.</p><button className="primary-button" onClick={() => window.alert("A área está pronta para receber os links das unidades.")}><ExternalLink size={16} /> Área preparada para os links</button></section>
+      <section className="intro-banner listings-intro"><div className="intro-icon"><Home size={25} /></div><div><p className="section-kicker">Links das unidades</p><h2>Anúncios ativos</h2><p>Encontre os links públicos organizados por origem: unidades particulares e imóveis do permutante ou da construtora.</p></div></section>
+      <div className="listing-divisions">
+        <article className="surface-card listing-division-card">
+          <div className="listing-card-image"><img src="/manus-storage/unidades-particulares_c1fa0b90.png" alt="Imóveis de unidades particulares" /></div>
+          <div className="listing-card-body">
+            <h2>Unidades particulares</h2>
+            <p>Confira as oportunidades de imóveis particulares disponíveis no catálogo da Bluedoor Imóveis.</p>
+            <a className="primary-button" href="https://bluedoorimoveis.com.br/comprar/imoveis?condos%5B0%5D=eba851d0-5615-4134-ae5a-73791835899c&condos%5B1%5D=3415e599-ba3c-4c09-87f8-ecae38fbc807&condos%5B2%5D=d0be86a7-4f81-4fca-91af-f597602fb6a6&typeArea=total_area&floorComparision=equals&sort=-is_price_shown%2Cby_calculated_price%2Cid&offset=1&limit=21" target="_blank" rel="noreferrer"><ExternalLink size={16} /> Ver imóveis disponíveis</a>
+          </div>
+        </article>
+        <article className="surface-card listing-division-card">
+          <div className="listing-card-image"><img src="/manus-storage/permutante-construtora_1908e11d.png" alt="Imóveis do permutante e da construtora" /></div>
+          <div className="listing-card-body">
+            <h2>Unidades Permutante / Construtora</h2>
+            <p>Confira os imóveis disponíveis para compra no catálogo público de lançamentos da Bluedoor.</p>
+            <a className="primary-button" href="https://bluedoorlancamentos.com.br/comprar/imoveis/rio-de-janeiro-rj?condos%5B0%5D=3c7a79db-cc5a-4c79-9eda-9f01527677e5&condos%5B1%5D=a79bae05-a74c-4f2b-a4a0-5ba5a70e1d67&condos%5B2%5D=b40e5888-cf4c-4ebb-91ff-fd58d6c15687&typeArea=total_area&floorComparision=equals&sort=-is_price_shown%2Cby_calculated_price%2Cid&offset=1&limit=21" target="_blank" rel="noreferrer"><ExternalLink size={16} /> Ver imóveis disponíveis</a>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }
@@ -344,10 +484,14 @@ function ContactPage() {
   return (
     <div className="content-stack">
       <section className="intro-banner contact-intro"><div className="intro-icon"><MessageCircle size={25} /></div><div><p className="section-kicker">Canal direto</p><h2>Avalie com a gente</h2><p>Um canal direto para moradores, parceiros e administradoras entrarem em contato com a Bluedoor após consultar as informações.</p></div></section>
-      <section className="surface-card contact-card"><div className="contact-card-icon"><Phone size={27} /></div><div><p className="section-kicker">Contato Bluedoor</p><h2>Fale diretamente com a nossa equipe</h2><p className="contact-placeholder">Para dúvidas, oportunidades, atualizações ou informações sobre os empreendimentos, use o telefone oficial ou acesse o site da Bluedoor Imóveis.</p><div className="contact-actions"><a className="primary-button" href="tel:+5521974050590"><Phone size={16} /> (21) 97405-0590</a><a className="outline-button" href="https://bluedoorimoveis.com.br/" target="_blank" rel="noreferrer"><ExternalLink size={16} /> bluedoorimoveis.com.br</a></div></div></section>
+      <section className="surface-card contact-card"><div className="contact-card-icon"><Phone size={27} /></div><div><p className="section-kicker">Contato Bluedoor</p><h2>Fale diretamente com a nossa equipe</h2><p className="contact-placeholder">Para dúvidas, oportunidades, atualizações ou informações sobre os empreendimentos, use o telefone oficial ou acesse os sites da Bluedoor Imóveis.</p><div className="contact-actions"><a className="primary-button" href="https://wa.me/5521974050590" target="_blank" rel="noreferrer"><WhatsAppIcon size={16} /> (21) 97405-0590</a><a className="outline-button" href="https://bluedoorimoveis.com.br/" target="_blank" rel="noreferrer"><DoorOpen size={16} /> Site de particulares</a><a className="outline-button launch-link" href="https://bluedoorlancamentos.com.br/" target="_blank" rel="noreferrer"><span className="door-launch-icon"><DoorOpen size={16} /><Sparkles size={9} /></span> Site de lançamentos</a></div></div></section>
       <div className="audience-grid"><AudienceCard icon={Users} title="Moradores" text="Tire dúvidas sobre as informações do seu empreendimento." /><AudienceCard icon={Handshake} title="Parceiros" text="Fale com a equipe sobre uma unidade ou oportunidade." /><AudienceCard icon={Landmark} title="Administradoras" text="Solicite alinhamentos ou atualizações de dados." /></div>
     </div>
   );
+}
+
+function WhatsAppIcon({ size = 16 }: { size?: number }) {
+  return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.946L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.479-8.413z" /></svg>;
 }
 
 function AudienceCard({ icon: Icon, title, text }: { icon: LucideIcon; title: string; text: string }) {
@@ -381,14 +525,14 @@ function SortButton({ label, sortKey, activeKey, direction, onClick }: { label: 
   return <button className={`sort-button ${isActive ? "active" : ""}`} onClick={() => onClick(sortKey)} aria-label={`Ordenar ${label} em ordem ${isActive && direction === "desc" ? "crescente" : "decrescente"}`}><span>{label}</span><Icon size={13} /></button>;
 }
 
-function AverageAreaValues({ values }: { values?: Record<string, string> }) {
-  const ranges = ["120–125 m²", "153–156 m²", "179–187 m²", "372 m²"];
-  const transactionCounts: Record<string, number> = { "120–125 m²": 32, "153–156 m²": 9, "179–187 m²": 3, "372 m²": 2 };
+function AverageAreaValues({ values, ranges: customRanges, transactionCounts: customTransactionCounts }: { values?: Record<string, string>; ranges?: string[]; transactionCounts?: Record<string, number> }) {
+  const ranges = customRanges ?? ["120–125 m²", "153–156 m²", "179–187 m²", "372 m²"];
+  const transactionCounts: Record<string, number> = customTransactionCounts ?? { "120–125 m²": 32, "153–156 m²": 9, "179–187 m²": 3, "372 m²": 2 };
   return (
     <section className="surface-card average-area-card">
       <div className="section-heading"><div><p className="section-kicker">Referência de valores</p><h2>Valor médio por metragem</h2></div><Ruler size={21} /></div>
       <div className="area-values-grid">
-        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>{values?.[range] ?? "A informar"}</strong><small>{values?.[range] && values[range] !== "A informar" ? `média de ${transactionCounts[range]} transações` : "valor médio da faixa"}</small></div>)}
+        {ranges.map((range) => <div className="area-value-item" key={range}><span>{range}</span><strong>{values?.[range] ?? "A informar"}</strong><small>{values?.[range] === "Sem dados recentes" ? "nenhuma transação recente" : values?.[range] && values[range] !== "A informar" ? `média de ${transactionCounts[range]} transações` : "valor médio da faixa"}</small></div>)}
       </div>
     </section>
   );

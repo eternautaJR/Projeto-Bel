@@ -164,6 +164,17 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .client-note { color: #4e8070; display: inline-flex; gap: 5px; align-items: center; }
 .empty-filter { padding: 25px; text-align: center; color: var(--muted); font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 8px; }
 .listings-intro, .contact-intro { margin-bottom: 0; }
+.listing-divisions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.listing-division-card { overflow: hidden; display: flex; flex-direction: column; min-height: 430px; }
+.listing-division-card.is-pending { background: linear-gradient(145deg, #fff, #f6faf7); }
+.listing-card-image { aspect-ratio: 1.4; overflow: hidden; background: #eaf1ed; }
+.listing-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.listing-division-card:hover .listing-card-image img { transform: scale(1.035); }
+.listing-card-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 20px; }
+.listing-card-body h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 21px; line-height: 1.25; margin: 7px 0 8px; }
+.listing-card-body p:not(.section-kicker) { color: var(--ink-soft); font-size: 13px; line-height: 1.55; margin: 0 0 18px; }
+.listing-card-body .primary-button, .listing-card-body .outline-button { margin-top: auto; }
+.listing-pending-icon { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; background: var(--gold-soft); color: var(--gold); margin-bottom: 8px; }
 .empty-listings { min-height: 340px; display: grid; place-items: center; align-content: center; text-align: center; padding: 40px; }
 .empty-listings > * { max-width: 600px; }
 .empty-listings h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 25px; margin: 12px 0 10px; }
@@ -174,6 +185,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .contact-card h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 25px; margin-bottom: 10px; }
 .contact-placeholder { color: var(--ink-soft); line-height: 1.55; font-size: 14px; max-width: 680px; }
 .contact-actions { display: flex; gap: 9px; margin-top: 19px; }
+.launch-link { position: relative; }
+.door-launch-icon { position: relative; display: inline-flex; width: 17px; height: 17px; align-items: center; justify-content: center; }
+.door-launch-icon svg:last-child { position: absolute; top: -4px; right: -4px; color: var(--gold); }
 
 @media (max-width: 1100px) {
   .main-area { padding: 24px 24px 40px; }
@@ -203,6 +217,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
   .client-note { margin-top: 5px; }
   .contact-card { display: block; }
   .contact-card-icon { margin-bottom: 18px; }
+  .listing-divisions { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
   .topbar h1 { font-size: 25px; }

@@ -1,0 +1,1 @@
+Validação do preview em 17/09/2026: Orygem e Latitud exibem 192 unidades no total, distribuídas como Bloco 1 – 60, Bloco 2 – 36, Bloco 3 – 60 e Bloco 4 – 36. A soma dos quatro blocos foi confirmada como 192. Os demais dados e históricos permanecem intactos.
