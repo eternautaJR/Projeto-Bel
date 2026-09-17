@@ -100,6 +100,16 @@ const latitudSales: SaleRow[] = [
   { unit: "Blc 3 Apt 1003", date: "12/01/2025", value: "R$ 1.728.048,73", pricePerM2: "R$ 13.824,39", area: "125 m²", complement: "Bloco 3 • Apt 1003", position: "Fundos" },
 ];
 
+const conceptSales: SaleRow[] = [
+  { unit: "Blc 1 Apt 0401", date: "02/08/2026", value: "R$ 2.530.612,30", pricePerM2: "R$ 13.678,99", area: "185 m²", complement: "Bloco 1 • Apt 0401", position: "Fundos" },
+  { unit: "Blc 1 Apt 0605", date: "14/05/2026", value: "R$ 2.035.994,00", pricePerM2: "R$ 13.307,15", area: "153 m²", complement: "Bloco 1 • Apt 0605", position: "Fundos" },
+  { unit: "Blc 1 Apt 0903", date: "11/05/2026", value: "R$ 3.595.076,40", pricePerM2: "R$ 13.880,60", area: "259 m²", complement: "Bloco 1 • Apt 0903", position: "Frente" },
+  { unit: "Blc 1 Apt 0804", date: "11/05/2026", value: "R$ 2.187.360,00", pricePerM2: "R$ 14.112,00", area: "155 m²", complement: "Bloco 1 • Apt 0804", position: "Frente" },
+  { unit: "Blc 2 Apt 0301", date: "19/03/2026", value: "R$ 2.866.750,00", pricePerM2: "R$ 13.984,15", area: "205 m²", complement: "Bloco 2 • Apt 0301", position: "Fundos" },
+  { unit: "Blc 1 Apt 0302", date: "05/02/2026", value: "R$ 2.513.257,60", pricePerM2: "R$ 13.585,18", area: "185 m²", complement: "Bloco 1 • Apt 0302", position: "Frente" },
+  { unit: "Blc 2 Apt 0603", date: "11/01/2026", value: "R$ 2.848.197,44", pricePerM2: "R$ 13.893,65", area: "205 m²", complement: "Bloco 2 • Apt 0603", position: "Fundos" },
+];
+
 const orygemSales: SaleRow[] = [
   { unit: "Blc 3 Apt 802", date: "19/08/2026", value: "R$ 1.750.408,30", pricePerM2: "R$ 14.230,96", area: "123 m²", complement: "Bloco 3 • Apt 802", position: "Fundos" },
   { unit: "Blc 3 Apt 606", date: "13/08/2026", value: "R$ 2.014.816,40", pricePerM2: "R$ 15.990,61", area: "126 m²", complement: "Bloco 3 • Apt 606", position: "Fundos" },
@@ -143,6 +153,13 @@ const orygemSales: SaleRow[] = [
   { unit: "Blc 1 Apt 1101", date: "14/08/2025", value: "R$ 2.905.195,69", pricePerM2: "R$ 15.371,41", area: "189 m²", complement: "Bloco 1 • Apt 1101", position: "Frente" },
 ];
 
+const conceptAreaRanges = [
+  { label: "152–156 m²", minimum: 152, maximum: 156 },
+  { label: "185 m²", minimum: 185, maximum: 185 },
+  { label: "205 m²", minimum: 205, maximum: 205 },
+  { label: "413 m²", minimum: 413, maximum: 413 },
+];
+
 const orygemAreaRanges = [
   { label: "123–125 m²", minimum: 123, maximum: 125 },
   { label: "153–156 m²", minimum: 153, maximum: 156 },
@@ -165,6 +182,15 @@ const orygemAverageValues = Object.fromEntries(orygemAreaRanges.map(({ label, mi
 }));
 
 const orygemTransactionCounts = Object.fromEntries(orygemAreaRanges.map(({ label, minimum, maximum }) => [label, salesInAreaRange(orygemSales, minimum, maximum).length]));
+
+const conceptAverageValues = Object.fromEntries(conceptAreaRanges.map(({ label, minimum, maximum }) => {
+  const matchingSales = salesInAreaRange(conceptSales, minimum, maximum);
+  if (matchingSales.length === 0) return [label, "Sem dados recentes"];
+  const total = matchingSales.reduce((sum, sale) => sum + Number.parseFloat(sale.value.replace(/R\$\s?/g, "").replace(/\./g, "").replace(",", ".")), 0);
+  return [label, new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(total / matchingSales.length)];
+}));
+
+const conceptTransactionCounts = Object.fromEntries(conceptAreaRanges.map(({ label, minimum, maximum }) => [label, salesInAreaRange(conceptSales, minimum, maximum).length]));
 
 function elapsedAgeFrom(month: number, year: number) {
   const today = new Date();
@@ -349,8 +375,8 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
         <Metric icon={Gauge} label="Taxa de ocupação" value="A informar" helper="" />
         <Metric icon={CalendarDays} label="Entrega e idade" value={activeCondo === "Orygem" ? "06/2024" : activeCondo === "Concept" ? "05/2025" : "A informar"} helper={activeCondo === "Orygem" ? elapsedAgeFrom(5, 2024) : activeCondo === "Concept" ? elapsedAgeFrom(4, 2025) : ""} />
       </section>
-      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <PendingAverageAreaValues ranges={["152–156 m²", "185 m²", "205 m²", "413 m²"]} /> : <PendingAverageAreaValues />}
-      {activeCondo === "Orygem" ? <OrygemSalesHistory /> : <PendingSalesHistory condo={activeCondo} />}
+      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <AverageAreaValues ranges={conceptAreaRanges.map((range) => range.label)} values={conceptAverageValues} transactionCounts={conceptTransactionCounts} /> : <PendingAverageAreaValues />}
+      {activeCondo === "Orygem" ? <SalesHistory condo="Orygem" sales={orygemSales} /> : activeCondo === "Concept" ? <SalesHistory condo="Concept" sales={conceptSales} /> : <PendingSalesHistory condo={activeCondo} />}
     </div>
   );
 }
@@ -377,11 +403,11 @@ function PendingSalesHistory({ condo }: { condo: Condominium }) {
   );
 }
 
-function OrygemSalesHistory() {
+function SalesHistory({ condo, sales }: { condo: "Concept" | "Orygem"; sales: SaleRow[] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortKey, setSortKey] = useState<SaleSortKey | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
-  const filteredSales = orygemSales.filter((sale) => `${sale.unit} ${sale.complement}`.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredSales = sales.filter((sale) => `${sale.unit} ${sale.complement}`.toLowerCase().includes(searchTerm.toLowerCase()));
   const sortedSales = [...filteredSales].sort((first, second) => {
     const firstValue = saleSortValue(first, sortKey ?? "date");
     const secondValue = saleSortValue(second, sortKey ?? "date");
@@ -398,10 +424,10 @@ function OrygemSalesHistory() {
   };
   return (
     <section className="surface-card sales-card">
-      <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do Orygem com unidade, bloco, data, valor, área, preço/m² e posição. Os 40 registros aparecem individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
+      <div className="section-heading section-heading-wrap"><div><p className="section-kicker">Histórico de vendas</p><h2>Vendas desde janeiro de 2025</h2><p className="section-description">Histórico do {condo} com unidade, bloco, data, valor, área, preço/m² e posição. Os {sales.length} registros aparecem individualmente.</p></div><div className="table-actions"><label className="search-box"><Search size={16} /><input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Buscar unidade ou bloco" /></label><button className="filter-button"><SlidersHorizontal size={16} /> Filtros</button></div></div>
       <div className="data-table-wrap"><table className="data-table"><thead><tr><th>Unidade</th><th><SortButton label="Data da venda" sortKey="date" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Valor" sortKey="value" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Área" sortKey="area" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th><SortButton label="Preço/m²" sortKey="pricePerM2" activeKey={sortKey} direction={sortDirection} onClick={toggleSort} /></th><th>Posição</th></tr></thead><tbody>{sortedSales.map((sale, index) => <tr key={`${sale.unit}-${sale.date}-${sale.value}-${index}`}><td><strong>{sale.unit}</strong><span className="cell-subtext">{sale.complement}</span></td><td>{sale.date}</td><td className="money-cell">{sale.value}</td><td>{sale.area}</td><td>{sale.pricePerM2}</td><td>{sale.position}</td></tr>)}</tbody></table></div>
       {sortedSales.length === 0 && <div className="empty-filter"><Search size={17} /> Nenhuma unidade encontrada para essa busca.</div>}
-      <div className="table-footer"><span>Mostrando {sortedSales.length} de 40 registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
+      <div className="table-footer"><span>Mostrando {sortedSales.length} de {sales.length} registros de referência</span><span className="client-note"><ShieldCheck size={14} /> Consulta transparente para moradores, parceiros e administradoras</span></div>
     </section>
   );
 }
