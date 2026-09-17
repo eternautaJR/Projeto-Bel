@@ -110,6 +110,38 @@ const conceptSales: SaleRow[] = [
   { unit: "Blc 2 Apt 0603", date: "11/01/2026", value: "R$ 2.848.197,44", pricePerM2: "R$ 13.893,65", area: "205 m²", complement: "Bloco 2 • Apt 0603", position: "Fundos" },
 ];
 
+const mudraSales: SaleRow[] = [
+  { unit: "Blc 1 Apt 505", date: "25/08/2026", value: "R$ 1.250.000,00", pricePerM2: "R$ 16.025,64", area: "78 m²", complement: "Bloco 1 • Apt 505", position: "Fundos" },
+  { unit: "Blc 1 Apt 410", date: "12/08/2026", value: "R$ 950.000,00", pricePerM2: "R$ 12.025,32", area: "79 m²", complement: "Bloco 1 • Apt 410", position: "Frente" },
+  { unit: "Blc 2 Apt 602", date: "02/08/2026", value: "R$ 1.450.000,00", pricePerM2: "R$ 13.679,25", area: "106 m²", complement: "Bloco 2 • Apt 602", position: "Fundos" },
+  { unit: "Blc 2 Apt 403", date: "11/06/2026", value: "R$ 1.550.000,00", pricePerM2: "R$ 14.622,64", area: "106 m²", complement: "Bloco 2 • Apt 403", position: "Fundos" },
+  { unit: "Blc 2 Apt 705", date: "01/06/2026", value: "R$ 1.450.000,00", pricePerM2: "R$ 15.934,07", area: "91 m²", complement: "Bloco 2 • Apt 705", position: "Fundos" },
+  { unit: "Blc 1 Apt 808", date: "07/05/2026", value: "R$ 1.125.000,00", pricePerM2: "R$ 14.423,08", area: "78 m²", complement: "Bloco 1 • Apt 808", position: "Fundos" },
+  { unit: "Blc 2 Apt 804", date: "24/02/2026", value: "R$ 1.412.602,80", pricePerM2: "R$ 15.354,38", area: "92 m²", complement: "Bloco 2 • Apt 804", position: "Fundos" },
+  { unit: "Blc 2 Apt 302", date: "28/01/2026", value: "R$ 1.286.761,60", pricePerM2: "R$ 12.139,26", area: "106 m²", complement: "Bloco 2 • Apt 302", position: "Fundos" },
+  { unit: "Blc 1 Apt 102", date: "06/10/2025", value: "R$ 1.071.827,97", pricePerM2: "R$ 13.741,38", area: "78 m²", complement: "Bloco 1 • Apt 102", position: "Frente" },
+  { unit: "Blc 2 Apt 306", date: "02/09/2025", value: "R$ 1.324.600,00", pricePerM2: "R$ 12.496,23", area: "106 m²", complement: "Bloco 2 • Apt 306", position: "Fundos" },
+  { unit: "Blc 1 Apt 105", date: "27/08/2025", value: "R$ 1.150.000,00", pricePerM2: "R$ 14.743,59", area: "78 m²", complement: "Bloco 1 • Apt 105", position: "Fundos" },
+  { unit: "Blc 1 Apt 402", date: "06/08/2025", value: "R$ 1.069.062,22", pricePerM2: "R$ 13.705,93", area: "78 m²", complement: "Bloco 1 • Apt 402", position: "Frente" },
+  { unit: "Blc 2 Apt 407", date: "21/07/2025", value: "R$ 1.540.638,59", pricePerM2: "R$ 14.534,33", area: "106 m²", complement: "Bloco 2 • Apt 407", position: "Fundos" },
+  { unit: "Blc 1 Apt 201", date: "30/06/2025", value: "R$ 1.097.184,63", pricePerM2: "R$ 13.888,41", area: "79 m²", complement: "Bloco 1 • Apt 201", position: "Frente" },
+  { unit: "Blc 1 Apt 310", date: "12/05/2025", value: "R$ 1.075.745,00", pricePerM2: "R$ 13.617,03", area: "79 m²", complement: "Bloco 1 • Apt 310", position: "Frente" },
+  { unit: "Blc 2 Apt 407", date: "21/04/2025", value: "R$ 1.490.000,00", pricePerM2: "R$ 14.056,60", area: "106 m²", complement: "Bloco 2 • Apt 407", position: "Fundos" },
+  { unit: "Blc 1 Apt 309", date: "31/03/2025", value: "R$ 1.075.035,00", pricePerM2: "R$ 13.782,50", area: "78 m²", complement: "Bloco 1 • Apt 309", position: "Frente" },
+  { unit: "Blc 1 Apt 502", date: "23/03/2025", value: "R$ 1.112.336,41", pricePerM2: "R$ 14.260,72", area: "78 m²", complement: "Bloco 1 • Apt 502", position: "Frente" },
+  { unit: "Blc 1 Apt 710", date: "06/03/2025", value: "R$ 984.141,00", pricePerM2: "R$ 12.457,48", area: "79 m²", complement: "Bloco 1 • Apt 710", position: "Frente" },
+  { unit: "Blc 2 Apt 702", date: "06/03/2025", value: "R$ 1.485.804,30", pricePerM2: "R$ 14.017,02", area: "106 m²", complement: "Bloco 2 • Apt 702", position: "Fundos" },
+  { unit: "Blc 2 Apt 803", date: "19/02/2025", value: "R$ 1.473.129,46", pricePerM2: "R$ 13.897,45", area: "106 m²", complement: "Bloco 2 • Apt 803", position: "Fundos" },
+  { unit: "Blc 2 Apt 105", date: "13/02/2025", value: "R$ 1.244.972,28", pricePerM2: "R$ 13.681,01", area: "91 m²", complement: "Bloco 2 • Apt 105", position: "Fundos" },
+  { unit: "Blc 2 Apt 402", date: "12/02/2025", value: "R$ 1.304.380,01", pricePerM2: "R$ 12.305,47", area: "106 m²", complement: "Bloco 2 • Apt 402", position: "Fundos" },
+  { unit: "Blc 1 Apt 403", date: "12/02/2025", value: "R$ 1.093.684,16", pricePerM2: "R$ 13.671,05", area: "80 m²", complement: "Bloco 1 • Apt 403", position: "Frente" },
+  { unit: "Blc 1 Apt 207", date: "05/02/2025", value: "R$ 1.066.721,20", pricePerM2: "R$ 13.334,02", area: "80 m²", complement: "Bloco 1 • Apt 207", position: "Fundos" },
+  { unit: "Blc 1 Apt 103", date: "13/01/2025", value: "R$ 1.021.858,50", pricePerM2: "R$ 12.773,23", area: "80 m²", complement: "Bloco 1 • Apt 103", position: "Frente" },
+  { unit: "Blc 1 Apt 410", date: "12/01/2025", value: "R$ 1.032.769,00", pricePerM2: "R$ 13.073,03", area: "79 m²", complement: "Bloco 1 • Apt 410", position: "Frente" },
+  { unit: "Blc 1 Apt 301", date: "02/01/2025", value: "R$ 1.000.000,00", pricePerM2: "R$ 12.658,23", area: "79 m²", complement: "Bloco 1 • Apt 301", position: "Frente" },
+  { unit: "Blc 1 Apt 305", date: "01/01/2025", value: "R$ 1.163.384,83", pricePerM2: "R$ 14.915,19", area: "78 m²", complement: "Bloco 1 • Apt 305", position: "Fundos" },
+];
+
 const orygemSales: SaleRow[] = [
   { unit: "Blc 3 Apt 802", date: "19/08/2026", value: "R$ 1.750.408,30", pricePerM2: "R$ 14.230,96", area: "123 m²", complement: "Bloco 3 • Apt 802", position: "Fundos" },
   { unit: "Blc 3 Apt 606", date: "13/08/2026", value: "R$ 2.014.816,40", pricePerM2: "R$ 15.990,61", area: "126 m²", complement: "Bloco 3 • Apt 606", position: "Fundos" },
@@ -160,6 +192,12 @@ const conceptAreaRanges = [
   { label: "413 m²", minimum: 413, maximum: 413 },
 ];
 
+const mudraAreaRanges = [
+  { label: "78–80 m²", minimum: 78, maximum: 80 },
+  { label: "91–106 m²", minimum: 91, maximum: 106 },
+  { label: "199 m²", minimum: 199, maximum: 199 },
+];
+
 const orygemAreaRanges = [
   { label: "123–125 m²", minimum: 123, maximum: 125 },
   { label: "153–156 m²", minimum: 153, maximum: 156 },
@@ -191,6 +229,15 @@ const conceptAverageValues = Object.fromEntries(conceptAreaRanges.map(({ label, 
 }));
 
 const conceptTransactionCounts = Object.fromEntries(conceptAreaRanges.map(({ label, minimum, maximum }) => [label, salesInAreaRange(conceptSales, minimum, maximum).length]));
+
+const mudraAverageValues = Object.fromEntries(mudraAreaRanges.map(({ label, minimum, maximum }) => {
+  const matchingSales = salesInAreaRange(mudraSales, minimum, maximum);
+  if (matchingSales.length === 0) return [label, "Sem dados recentes"];
+  const total = matchingSales.reduce((sum, sale) => sum + Number.parseFloat(sale.value.replace(/R\$\s?/g, "").replace(/\./g, "").replace(",", ".")), 0);
+  return [label, new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(total / matchingSales.length)];
+}));
+
+const mudraTransactionCounts = Object.fromEntries(mudraAreaRanges.map(({ label, minimum, maximum }) => [label, salesInAreaRange(mudraSales, minimum, maximum).length]));
 
 function elapsedAgeFrom(month: number, year: number) {
   const today = new Date();
@@ -375,8 +422,8 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
         <Metric icon={Gauge} label="Taxa de ocupação" value="A informar" helper="" />
         <Metric icon={CalendarDays} label="Entrega e idade" value={activeCondo === "Orygem" ? "06/2024" : activeCondo === "Concept" ? "05/2025" : "06/2023"} helper={activeCondo === "Orygem" ? elapsedAgeFrom(5, 2024) : activeCondo === "Concept" ? elapsedAgeFrom(4, 2025) : elapsedAgeFrom(5, 2023)} />
       </section>
-      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <AverageAreaValues ranges={conceptAreaRanges.map((range) => range.label)} values={conceptAverageValues} transactionCounts={conceptTransactionCounts} /> : <PendingAverageAreaValues ranges={["78–80 m²", "91–106 m²", "199 m²"]} />}
-      {activeCondo === "Orygem" ? <SalesHistory condo="Orygem" sales={orygemSales} /> : activeCondo === "Concept" ? <SalesHistory condo="Concept" sales={conceptSales} /> : <PendingSalesHistory condo={activeCondo} />}
+      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <AverageAreaValues ranges={conceptAreaRanges.map((range) => range.label)} values={conceptAverageValues} transactionCounts={conceptTransactionCounts} /> : <AverageAreaValues ranges={mudraAreaRanges.map((range) => range.label)} values={mudraAverageValues} transactionCounts={mudraTransactionCounts} />}
+      {activeCondo === "Orygem" ? <SalesHistory condo="Orygem" sales={orygemSales} /> : activeCondo === "Concept" ? <SalesHistory condo="Concept" sales={conceptSales} /> : <SalesHistory condo="Mudrá" sales={mudraSales} />}
     </div>
   );
 }
@@ -403,7 +450,7 @@ function PendingSalesHistory({ condo }: { condo: Condominium }) {
   );
 }
 
-function SalesHistory({ condo, sales }: { condo: "Concept" | "Orygem"; sales: SaleRow[] }) {
+function SalesHistory({ condo, sales }: { condo: "Concept" | "Mudrá" | "Orygem"; sales: SaleRow[] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortKey, setSortKey] = useState<SaleSortKey | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
