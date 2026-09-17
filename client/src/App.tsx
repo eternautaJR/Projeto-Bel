@@ -366,16 +366,16 @@ function CondominiumPreparingPage({ activeCondo, setActiveCondo }: { activeCondo
         <div>
           <p className="section-kicker">Empreendimento selecionado</p>
           <h2>{activeCondo}</h2>
-          <div className="property-location"><MapPin size={15} /> {activeCondo === "Orygem" ? "Avenida Candido Portinari, 170 · Barra da Tijuca · Rio de Janeiro/RJ" : activeCondo === "Concept" ? "Avenida Rosauro Estellita, 35 · Barra da Tijuca · Rio de Janeiro/RJ" : "Endereço a informar · Rio de Janeiro/RJ"}</div>
+          <div className="property-location"><MapPin size={15} /> {activeCondo === "Orygem" ? "Avenida Candido Portinari, 170 · Barra da Tijuca · Rio de Janeiro/RJ" : activeCondo === "Concept" ? "Avenida Rosauro Estellita, 35 · Barra da Tijuca · Rio de Janeiro/RJ" : "Avenida Cândido Portinari, 60 · Barra da Tijuca · Rio de Janeiro/RJ"}</div>
         </div>
       </section>
       <section className="metrics-grid">
-        <Metric icon={Building2} label="Total de unidades" value={activeCondo === "Orygem" ? "192" : activeCondo === "Concept" ? "77" : "A informar"} helper={activeCondo === "Orygem" ? "Bloco 1 – 60 · Bloco 2 – 36 · Bloco 3 – 60 · Bloco 4 – 36" : activeCondo === "Concept" ? "Bloco 1 – 43 · Bloco 2 – 34" : "Distribuição por bloco a informar"} />
+        <Metric icon={Building2} label="Total de unidades" value={activeCondo === "Orygem" ? "192" : activeCondo === "Concept" ? "77" : "144"} helper={activeCondo === "Orygem" ? "Bloco 1 – 60 · Bloco 2 – 36 · Bloco 3 – 60 · Bloco 4 – 36" : activeCondo === "Concept" ? "Bloco 1 – 43 · Bloco 2 – 34" : "Bloco 1 – 80 · Bloco 2 – 64"} />
         <Metric icon={Ruler} label="Área total do condomínio" value={activeCondo === "Orygem" ? "17.000 m²" : activeCondo === "Concept" || activeCondo === "Mudrá" ? "8.573 m²" : "A informar"} helper="" />
         <Metric icon={Gauge} label="Taxa de ocupação" value="A informar" helper="" />
-        <Metric icon={CalendarDays} label="Entrega e idade" value={activeCondo === "Orygem" ? "06/2024" : activeCondo === "Concept" ? "05/2025" : "A informar"} helper={activeCondo === "Orygem" ? elapsedAgeFrom(5, 2024) : activeCondo === "Concept" ? elapsedAgeFrom(4, 2025) : ""} />
+        <Metric icon={CalendarDays} label="Entrega e idade" value={activeCondo === "Orygem" ? "06/2024" : activeCondo === "Concept" ? "05/2025" : "06/2023"} helper={activeCondo === "Orygem" ? elapsedAgeFrom(5, 2024) : activeCondo === "Concept" ? elapsedAgeFrom(4, 2025) : elapsedAgeFrom(5, 2023)} />
       </section>
-      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <AverageAreaValues ranges={conceptAreaRanges.map((range) => range.label)} values={conceptAverageValues} transactionCounts={conceptTransactionCounts} /> : <PendingAverageAreaValues />}
+      {activeCondo === "Orygem" ? <AverageAreaValues ranges={orygemAreaRanges.map((range) => range.label)} values={orygemAverageValues} transactionCounts={orygemTransactionCounts} /> : activeCondo === "Concept" ? <AverageAreaValues ranges={conceptAreaRanges.map((range) => range.label)} values={conceptAverageValues} transactionCounts={conceptTransactionCounts} /> : <PendingAverageAreaValues ranges={["78–80 m²", "91–106 m²", "199 m²"]} />}
       {activeCondo === "Orygem" ? <SalesHistory condo="Orygem" sales={orygemSales} /> : activeCondo === "Concept" ? <SalesHistory condo="Concept" sales={conceptSales} /> : <PendingSalesHistory condo={activeCondo} />}
     </div>
   );
