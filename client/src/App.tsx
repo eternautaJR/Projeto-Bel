@@ -533,7 +533,7 @@ function ActiveListingsPage() {
       <section className="intro-banner listings-intro"><div className="intro-icon"><Home size={25} /></div><div><p className="section-kicker">Links das unidades</p><h2>Anúncios ativos</h2><p>Encontre os links públicos organizados por origem: unidades particulares e imóveis do permutante ou da construtora.</p></div></section>
       <div className="listing-divisions">
         <article className="surface-card listing-division-card">
-          <div className="listing-card-image"><img src="/manus-storage/unidades-particulares_c1fa0b90.png" alt="Imóveis de unidades particulares" /></div>
+          <div className="listing-card-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663932519065/ZbxpVmBQlfCWnGnY.png" alt="Imóveis de unidades particulares" /></div>
           <div className="listing-card-body">
             <h2>Unidades particulares</h2>
             <p>Confira as oportunidades de imóveis particulares disponíveis no catálogo da Bluedoor Imóveis.</p>
@@ -541,7 +541,7 @@ function ActiveListingsPage() {
           </div>
         </article>
         <article className="surface-card listing-division-card">
-          <div className="listing-card-image"><img src="/manus-storage/permutante-construtora_1908e11d.png" alt="Imóveis do permutante e da construtora" /></div>
+          <div className="listing-card-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663932519065/iobyUzlQKRftYHCw.png" alt="Imóveis do permutante e da construtora" /></div>
           <div className="listing-card-body">
             <h2>Unidades Permutante / Construtora</h2>
             <p>Confira os imóveis disponíveis para compra no catálogo público de lançamentos da Bluedoor.</p>
