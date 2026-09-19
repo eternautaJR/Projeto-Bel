@@ -79,6 +79,9 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .intro-banner p:not(.section-kicker) { max-width: 760px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 0; font-size: 14px; }
 .audience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .audience-card { padding: 23px; }
+.contact-audience-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.audience-brand-card { display: flex; flex-direction: column; justify-content: center; background: linear-gradient(145deg, #f7fbf8, #eef6f1); }
+.audience-brand-logo { width: 132px; height: 58px; object-fit: contain; object-position: left center; margin-bottom: 17px; }
 .audience-icon, .feature-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: var(--blue-dark); background: #eaf5fa; margin-bottom: 15px; }
 .audience-card h3 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 17px; margin-bottom: 8px; }
 .audience-card p, .feature-item p { color: var(--ink-soft); font-size: 13px; line-height: 1.55; margin-bottom: 0; }
@@ -187,6 +190,8 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
 .empty-icon { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; background: var(--gold-soft); color: var(--gold); }
 .contact-card { display: flex; gap: 24px; align-items: flex-start; padding: 32px; background: linear-gradient(130deg, #fff, #f5faf6); }
 .contact-card-icon { width: 62px; height: 62px; border-radius: 17px; display: grid; place-items: center; background: var(--green); color: #efd99a; flex: 0 0 62px; }
+.contact-brand-footer { margin-top: 24px; padding-top: 15px; border-top: 1px solid rgba(9, 54, 40, .1); display: flex; justify-content: flex-end; align-items: center; }
+.contact-brand-logo { display: block; width: 112px; height: auto; max-height: 52px; object-fit: contain; object-position: right center; opacity: .86; }
 .contact-card h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 25px; margin-bottom: 10px; }
 .contact-placeholder { color: var(--ink-soft); line-height: 1.55; font-size: 14px; max-width: 680px; }
 .contact-actions { display: flex; gap: 9px; margin-top: 19px; }
@@ -210,6 +215,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(115, 86, 220
   .topbar { display: block; }
   .topbar-meta { margin-top: 15px; flex-wrap: wrap; }
   .audience-grid { grid-template-columns: 1fr; }
+  .contact-audience-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; gap: 12px; }
   .step-arrow { transform: rotate(90deg); justify-self: center; }
   .property-header { display: block; }
